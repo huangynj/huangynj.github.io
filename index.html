@@ -132,16 +132,6 @@
             z-index: 100;
         }
 
-        .sub-section.active header::after {
-            content: "Collapse ▴";
-            float: right;
-            font-size: 0.9em;
-            background-color: #ddd;
-            padding: 2px 8px;
-            border-radius: 4px;
-            color: #333;
-            margin-top: -3px;
-        }
 
         .hand-icon {
             margin-right: 10px;
@@ -2589,13 +2579,26 @@
 
         // 为每个子小节的标题添加点击事件监听器
         subSections.forEach(function (subSection) {
-            subSection.querySelector('header').addEventListener('click', function () {
+            var header = subSection.querySelector('header');
+            header.addEventListener('click', function () {
+                var wasActive = subSection.classList.contains('active');
                 subSection.classList.toggle('active'); /* 切换 active 类 */
                 var handIcon = subSection.querySelector('.hand-icon');
+
                 if (subSection.classList.contains('active')) {
                     handIcon.innerHTML = '👇'; /* 如果小节展开，显示向下手指 */
                 } else {
                     handIcon.innerHTML = '👉'; /* 如果小节折叠，显示向右手指 */
+
+                    // Allow the DOM to update (collapse) before scrolling
+                    setTimeout(function () {
+                        var offset = 80; // Adjust based on your fixed navbar height
+                        var headerPosition = header.getBoundingClientRect().top + window.scrollY;
+                        window.scrollTo({
+                            top: headerPosition - offset,
+                            behavior: 'smooth'
+                        });
+                    }, 50); // Short delay to ensure collapse layout shift happens first
                 }
             });
         });
