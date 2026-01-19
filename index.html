@@ -1344,7 +1344,7 @@
 
                     <!-- Year Button -->
                     <p>
-                    <h5 class="year-buttons">
+                    <h5 class="year-buttons sticky-year-nav">
                         <a href="javascript:void(0)" class="label label-info" onclick="scrollToYear('2015')">2015</a>
                         <a href="javascript:void(0)" class="label label-info" onclick="scrollToYear('2016')">2016</a>
                         <a href="javascript:void(0)" class="label label-info" onclick="scrollToYear('2018')">2018</a>
@@ -2625,7 +2625,7 @@
     <script>
         function scrollToYear(year) {
             const section = document.getElementById(year);
-            const offset = 50; // Adjust this value to scroll higher above the section
+            const offset = 100; // Adjust this value to scroll higher above the section
 
             // Get the position of the section relative to the top of the document
             const sectionPosition = section.getBoundingClientRect().top + window.scrollY;

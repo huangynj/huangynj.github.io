@@ -359,3 +359,16 @@ ol li ol li {
 		padding: 1.5rem;
 	}
 }
+
+/* Sticky Year Navigation */
+.sticky-year-nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 60px;
+	z-index: 90;
+	background-color: white;
+	padding: 10px 0;
+	margin-top: 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
