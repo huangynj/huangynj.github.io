@@ -1,8 +1,4 @@
 :root {
-	/* --primary: #2563eb;
-	--primary-dark: #1e40af; */
-	--primary: #059669;
-	--primary-dark: #047857;
 	--accent: #f59e0b;
 	--bg: #ffffff;
 	--bg-alt: #f8fafc;
@@ -13,6 +9,27 @@
 	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	--radius: 12px;
+}
+
+/* Blue Theme */
+body.theme-blue {
+	--primary: #2563eb;
+	--primary-dark: #1e40af;
+	--hero-gradient: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+	--card-hover-bg: #eff6ff;
+}
+
+/* Green Theme */
+body.theme-green {
+	--primary: #059669;
+	--primary-dark: #047857;
+	--hero-gradient: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+	--card-hover-bg: #f0fdf4;
+}
+
+/* Helper Class for Theme Color Text */
+.text-theme {
+	color: var(--primary) !important;
 }
 
 body {
@@ -83,8 +100,7 @@ ul.academic-list li:hover,
 /* Hero Section Modernization */
 .hero-section {
 	padding: 40px 0;
-	/*	background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%); */
-	background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+	background: var(--hero-gradient);
 	border-radius: 0 0 50px 50px;
 	margin-bottom: 2rem;
 	box-shadow: var(--shadow-sm);
@@ -179,7 +195,7 @@ ul.academic-list li:hover,
 
 .sub-section header:hover {
 	/* background-color: #eff6ff !important; */
-	background-color: #f0fdf4 !important;
+	background-color: var(--card-hover-bg) !important;
 	color: var(--primary-dark);
 	box-shadow: var(--shadow-md);
 }
