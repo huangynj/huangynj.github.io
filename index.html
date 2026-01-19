@@ -126,6 +126,21 @@
             /* 添加边框 */
             margin-top: 10px;
             /* 为每个标题添加一些外边距 */
+            position: -webkit-sticky;
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+        }
+
+        .sub-section.active header::after {
+            content: "Collapse ▴";
+            float: right;
+            font-size: 0.9em;
+            background-color: #ddd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #333;
+            margin-top: -3px;
         }
 
         .hand-icon {
