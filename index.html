@@ -65,8 +65,8 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom Styling -->
-    <link rel="stylesheet" href="css/custom.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css?v=2">
 
     <!-- Image gallery -->
     <link rel="stylesheet" type="text/css" href="css/image_gallery.css">
@@ -2663,6 +2663,35 @@
     </script>
 
 
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Target elements to animate
+            const elementsToAnimate = document.querySelectorAll('.research-card, ul.academic-list li, ol.academic-list li, .sub-section header');
+            
+            // Add base class
+            elementsToAnimate.forEach(el => {
+                el.classList.add('reveal');
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Stop observing once revealed to keep the element visible
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 
 

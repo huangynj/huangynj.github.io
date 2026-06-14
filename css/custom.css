@@ -372,3 +372,19 @@ ol li ol li {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 	border-radius: 10px;
 }
+
+/* ==========================================================================
+   ANIMATIONS & DYNAMIC EFFECTS
+   ========================================================================== */
+
+/* Scroll Reveal Animation */
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
