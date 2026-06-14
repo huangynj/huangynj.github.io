@@ -137,6 +137,73 @@ ga('send', 'pageview');
     });
 })();
 
+// Lazy-load the third-party LinkedIn feed only when the card is near view.
+(function() {
+    function markWidget(shell, className) {
+        if (shell.classList) {
+            shell.classList.add(className);
+        } else if (shell.className.indexOf(className) === -1) {
+            shell.className += " " + className;
+        }
+    }
+
+    function loadLinkedInWidget(shell) {
+        if (!shell || shell.getAttribute('data-widget-loaded') === 'true') return;
+
+        var widgetSrc = shell.getAttribute('data-widget-src');
+        if (!widgetSrc) return;
+
+        shell.setAttribute('data-widget-loaded', 'true');
+        shell.setAttribute('aria-busy', 'true');
+
+        var script = document.createElement('script');
+        script.src = widgetSrc;
+        script.async = true;
+        script.defer = true;
+        script.onload = function() {
+            shell.setAttribute('aria-busy', 'false');
+            markWidget(shell, 'is-loaded');
+        };
+        script.onerror = function() {
+            shell.setAttribute('aria-busy', 'false');
+            markWidget(shell, 'has-error');
+        };
+
+        document.body.appendChild(script);
+    }
+
+    function scheduleLinkedInLoad(shell) {
+        if (window.requestIdleCallback) {
+            window.requestIdleCallback(function() {
+                loadLinkedInWidget(shell);
+            }, { timeout: 1500 });
+        } else {
+            setTimeout(function() {
+                loadLinkedInWidget(shell);
+            }, 0);
+        }
+    }
+
+    $(document).ready(function() {
+        var shell = document.querySelector('[data-linkedin-widget]');
+        if (!shell) return;
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    observer.disconnect();
+                    scheduleLinkedInLoad(shell);
+                });
+            }, { rootMargin: '200px 0px' });
+
+            observer.observe(shell);
+        } else {
+            scheduleLinkedInLoad(shell);
+        }
+    });
+})();
+
 // ==========================================================================
 // LIVE PUBLICATION FILTER
 // ==========================================================================

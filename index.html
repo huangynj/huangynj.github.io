@@ -69,7 +69,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css?v=10">
+    <link rel="stylesheet" href="css/custom.css?v=11">
 
     <!-- Image gallery -->
     <link rel="stylesheet" type="text/css" href="css/image_gallery.css">
@@ -91,7 +91,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/menucollapse.js"></script>
     <script type="text/javascript" src="js/arrow78.js?v=2"></script>
-    <script type="text/javascript" src="js/custom.js?v=21"></script>
+    <script type="text/javascript" src="js/custom.js?v=22"></script>
 
     <!-- Chart.js for Publication Metrics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -381,8 +381,12 @@
                     <div id="activity-feed" class="hero-updates-card">
                         <h4 class="hero-updates-title"><i class="fa fa-rss"></i>
                             Latest Updates</h4>
-                        <div class='sk-ww-linkedin-profile-post' data-embed-id='25599160'></div>
-                        <script src='https://widgets.sociablekit.com/linkedin-profile-posts/widget.js' defer></script>
+                        <div class="linkedin-widget-shell" data-linkedin-widget
+                            data-widget-src="https://widgets.sociablekit.com/linkedin-profile-posts/widget.js"
+                            aria-busy="false">
+                            <div class="sk-ww-linkedin-profile-post" data-embed-id="25599160"></div>
+                            <p class="linkedin-widget-placeholder">Loading updates...</p>
+                        </div>
                     </div>
                 </div>
             </div>

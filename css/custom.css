@@ -216,6 +216,27 @@ button:focus-visible {
 	color: var(--primary);
 }
 
+.linkedin-widget-shell {
+	min-height: 180px;
+	position: relative;
+}
+
+.linkedin-widget-placeholder {
+	margin: 0;
+	padding: 2rem 0;
+	color: var(--text-muted);
+	font-size: 0.95rem;
+	text-align: center;
+}
+
+.linkedin-widget-shell.is-loaded .linkedin-widget-placeholder {
+	display: none;
+}
+
+.linkedin-widget-shell.has-error .linkedin-widget-placeholder {
+	color: var(--status-error);
+}
+
 .social-links {
 	margin-top: 2rem;
 	display: flex;
