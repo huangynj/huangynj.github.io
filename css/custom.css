@@ -337,10 +337,29 @@ ol li ol li {
 	transition: var(--transition);
 }
 
-#topcontrol img {
-	width: 50px;
-	height: auto;
-	filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+/* Glassmorphic Scroll Button */
+.glass-scroll-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 24px;
+    -webkit-text-stroke: 1px var(--primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-scroll-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================================================
@@ -348,8 +367,10 @@ ol li ol li {
    ========================================================================== */
 
 @media (max-width: 768px) {
-	#topcontrol img {
+	.glass-scroll-btn {
 		width: 40px;
+		height: 40px;
+        font-size: 16px;
 	}
 
 	ol[reversed] li,
