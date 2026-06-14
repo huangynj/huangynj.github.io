@@ -290,6 +290,43 @@ function renderMetricsChart() {
             plugins: {
                 legend: {
                     position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        boxWidth: 40,
+                        generateLabels: function(chart) {
+                            // Create custom "line with dot" canvas
+                            if (!window.dotLineCanvas) {
+                                const c = document.createElement('canvas');
+                                c.width = 40; // 30px line + 10px empty gap for padding
+                                c.height = 10;
+                                const cx = c.getContext('2d');
+                                // Draw Line
+                                cx.strokeStyle = 'rgba(255, 99, 132, 1)';
+                                cx.lineWidth = 2;
+                                cx.beginPath();
+                                cx.moveTo(0, 5);
+                                cx.lineTo(30, 5); // Stop line at 30px to leave a 10px gap
+                                cx.stroke();
+                                // Draw Dot
+                                cx.fillStyle = 'rgba(255, 99, 132, 1)';
+                                cx.beginPath();
+                                cx.arc(15, 5, 4, 0, 2 * Math.PI); // Centered at 15
+                                cx.fill();
+                                window.dotLineCanvas = c;
+                            }
+
+                            const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                            original.forEach(label => {
+                                if (label.text === 'Citations (Google Scholar)') {
+                                    label.pointStyle = window.dotLineCanvas;
+                                } else {
+                                    label.pointStyle = 'rect';
+                                    label.text = ' ' + label.text; // Add small space for consistency
+                                }
+                            });
+                            return original;
+                        }
+                    }
                 },
                 title: {
                     display: false
