@@ -101,3 +101,23 @@ jQuery(document).ready(function($) {
  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-70658068-1', 'auto');
 ga('send', 'pageview');
+
+// ==========================================================================
+// LIVE PUBLICATION FILTER
+// ==========================================================================
+$(document).ready(function() {
+    $('#pub-search-input').on('keyup', function() {
+        var value = $(this).val().toLowerCase();
+        // Filter the academic-list items
+        $('.academic-list li').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        
+        // Add a focus style to the input container
+        if (value.length > 0) {
+            $(this).css('box-shadow', '0 4px 15px rgba(0, 0, 0, 0.1)');
+        } else {
+            $(this).css('box-shadow', '0 2px 10px rgba(0, 0, 0, 0.05)');
+        }
+    });
+});
