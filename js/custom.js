@@ -199,6 +199,106 @@ $(window).on('scroll', function() {
 // ==========================================================================
 let metricsChartInstance = null;
 
+function renderMetricsChart() {
+    if (metricsChartInstance || !window.chartData || !$('#metricsChartContainer').is(':visible')) {
+        return; // Already rendered, or data not ready, or container not visible
+    }
+
+    let pubCounts = window.chartData.pubCounts;
+    let citations = window.chartData.citations;
+
+    // Combine all years from both objects to ensure no missing years
+    let allYears = new Set([...Object.keys(pubCounts), ...Object.keys(citations)]);
+    let labels = Array.from(allYears).sort();
+
+    let pubData = labels.map(year => pubCounts[year] || 0);
+    let citData = labels.map(year => citations[year] || 0);
+
+    // Render Chart
+    const ctx = document.getElementById('metricsChart').getContext('2d');
+    metricsChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Publications per Year',
+                    data: pubData,
+                    backgroundColor: 'rgba(24, 188, 156, 0.7)', // Theme green (#18bc9c)
+                    borderColor: 'rgba(24, 188, 156, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'y',
+                    order: 2
+                },
+                {
+                    label: 'Citations (Google Scholar)',
+                    data: citData,
+                    type: 'line',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                    yAxisID: 'y1',
+                    tension: 0.3,
+                    order: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 500 // Smooth animation
+            },
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: { display: false }
+                },
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'Publications',
+                        color: '#18bc9c'
+                    },
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Citations',
+                        color: 'rgba(255, 99, 132, 1)'
+                    },
+                    beginAtZero: true,
+                    grid: {
+                        drawOnChartArea: false,
+                    },
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
 $(document).ready(function() {
     if ($('#metricsChart').length === 0) return;
 
@@ -230,110 +330,18 @@ $(document).ready(function() {
         })
         .then(citations => {
             window.chartData = { pubCounts, citations };
+            renderMetricsChart(); // Render if container is already visible
         })
         .catch(error => {
             console.error('Error fetching citations:', error);
             window.chartData = { pubCounts, citations: {} };
+            renderMetricsChart(); // Render if container is already visible
         });
 });
 
 window.toggleMetricsChart = function() {
     $('#metricsChartContainer').slideToggle(300, function() {
         // Only render the chart after the container is fully visible the first time
-        if (!metricsChartInstance && window.chartData) {
-            let pubCounts = window.chartData.pubCounts;
-            let citations = window.chartData.citations;
-
-            // Combine all years from both objects to ensure no missing years
-            let allYears = new Set([...Object.keys(pubCounts), ...Object.keys(citations)]);
-            let labels = Array.from(allYears).sort();
-
-            let pubData = labels.map(year => pubCounts[year] || 0);
-            let citData = labels.map(year => citations[year] || 0);
-
-            // Render Chart
-            const ctx = document.getElementById('metricsChart').getContext('2d');
-            metricsChartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Publications per Year',
-                            data: pubData,
-                            backgroundColor: 'rgba(24, 188, 156, 0.7)', // Theme green (#18bc9c)
-                            borderColor: 'rgba(24, 188, 156, 1)',
-                            borderWidth: 1,
-                            yAxisID: 'y',
-                            order: 2
-                        },
-                        {
-                            label: 'Citations (Google Scholar)',
-                            data: citData,
-                            type: 'line',
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 2,
-                            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-                            yAxisID: 'y1',
-                            tension: 0.3,
-                            order: 1
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    animation: {
-                        duration: 500 // Smooth animation
-                    },
-                    interaction: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    scales: {
-                        x: {
-                            grid: { display: false }
-                        },
-                        y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Publications',
-                                color: '#18bc9c'
-                            },
-                            beginAtZero: true,
-                            ticks: {
-                                stepSize: 1
-                            }
-                        },
-                        y1: {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            title: {
-                                display: true,
-                                text: 'Citations',
-                                color: 'rgba(255, 99, 132, 1)'
-                            },
-                            beginAtZero: true,
-                            grid: {
-                                drawOnChartArea: false,
-                            },
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        title: {
-                            display: false
-                        }
-                    }
-                }
-            });
-        }
+        renderMetricsChart();
     });
 };
