@@ -340,8 +340,15 @@ $(document).ready(function() {
 });
 
 window.toggleMetricsChart = function() {
-    $('#metricsChartContainer').slideToggle(300, function() {
-        // Only render the chart after the container is fully visible the first time
+    let container = $('#metricsChartContainer');
+    if (container.is(':hidden')) {
+        // Temporarily show the container without animation so Chart.js can calculate dimensions
+        container.show();
         renderMetricsChart();
-    });
+        // Hide it immediately and then slide down for the animation
+        container.hide();
+        container.slideDown(300);
+    } else {
+        container.slideUp(300);
+    }
 };
