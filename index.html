@@ -1356,12 +1356,17 @@
                             <a target="_blank" href="http://orcid.org/0000-0001-7883-8768">
                                 <font color="white">ORCID</font>
                             </a>
+                        </span>&nbsp;
+                        <span class="label label-success">
+                            <a href="javascript:void(0)" onclick="$('#metricsChartContainer').slideToggle();">
+                                <font color="white"><i class="fa fa-bar-chart"></i> Metrics</font>
+                            </a>
                         </span>
 
                     </h4>
 
                     <!-- Publication & Citation Metrics Chart -->
-                    <div style="width: 100%; max-width: 800px; margin: 30px auto;">
+                    <div id="metricsChartContainer" style="display: none; width: 100%; max-width: 800px; margin: 30px auto;">
                         <canvas id="metricsChart" height="100"></canvas>
                     </div>
 
