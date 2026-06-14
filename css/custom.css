@@ -366,6 +366,58 @@ ol li ol li {
 	/* Separation between rows */
 }
 
+#publications .publication-profile-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.6rem;
+	line-height: 1.5;
+}
+
+#publications .publication-profile-links .label {
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	white-space: nowrap;
+}
+
+#publications .publication-profile-links .label a {
+	color: white;
+	text-decoration: none;
+}
+
+.year-buttons.sticky-year-nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.55rem;
+}
+
+.year-buttons.sticky-year-nav .label-info {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.pub-search-container {
+	display: inline-flex !important;
+	align-items: center;
+	flex: 1 1 180px;
+	max-width: 280px;
+	margin-left: 0 !important;
+}
+
+.pub-search-container .fa-search {
+	top: 50% !important;
+	transform: translateY(-50%);
+}
+
+#pub-search-input {
+	width: 100% !important;
+}
+
 /* Scroll to Top Button */
 #topcontrol {
 	transition: var(--transition);
@@ -482,6 +534,87 @@ ol li ol li {
 	.hero-updates-title {
 		margin-bottom: 1rem;
 		font-size: 1.2rem;
+	}
+
+	#publications h2 {
+		font-size: 2.4rem;
+		line-height: 1.15;
+	}
+
+	#publications .publication-profile-links {
+		gap: 0.55rem;
+		margin-bottom: 1.25rem;
+	}
+
+	#publications .publication-profile-links .label {
+		font-size: 1.4rem;
+		line-height: 1.2;
+		padding: 0.45em 0.85em;
+	}
+
+	.year-buttons.sticky-year-nav {
+		top: 52px;
+		gap: 0.45rem;
+		padding: 10px;
+	}
+
+	.year-buttons.sticky-year-nav .label-info {
+		font-size: 1.25rem;
+		line-height: 1.1;
+		min-width: 4.6rem;
+		padding: 0.35em 0.65em;
+	}
+
+	.pub-search-container {
+		flex: 1 0 100%;
+		max-width: none;
+		margin-top: 0.15rem;
+	}
+
+	#pub-search-input {
+		height: 34px !important;
+		border-radius: 17px !important;
+		font-size: 1.35rem !important;
+		line-height: 1.2 !important;
+	}
+
+	#publications ol.academic-list {
+		padding-left: 2.25rem;
+	}
+
+	#publications ol[reversed] li,
+	#publications ol.academic-list li {
+		margin-left: 0.25rem;
+		padding: 1.1rem 1.25rem;
+		text-align: left;
+		word-spacing: normal;
+		font-size: 1.55rem;
+		line-height: 1.55;
+	}
+
+	#publications ol.academic-list li a {
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	#publications ol.academic-list li .label-info {
+		display: inline-flex;
+		max-width: 100%;
+		width: max-content;
+		white-space: normal;
+	}
+
+	#publications ol.academic-list li .label-info a {
+		overflow-wrap: normal;
+		word-break: normal;
+	}
+
+	#publications .copy-citation-btn {
+		display: inline-flex;
+		align-items: center;
+		width: max-content;
+		margin-top: 0.5rem;
+		margin-left: 0 !important;
 	}
 
 	ol[reversed] li,
