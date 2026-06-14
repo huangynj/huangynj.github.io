@@ -480,3 +480,40 @@ ol li ol li {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     filter: brightness(0.9);
 }
+
+/* ==========================================================================
+   SKILL TAGS (Introduction Section)
+   ========================================================================== */
+.skill-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(4, 99, 128, 0.08); /* Matches var(--primary) with transparency */
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(4, 99, 128, 0.2);
+    cursor: default;
+}
+
+.skill-tag i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.skill-tag:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+}
