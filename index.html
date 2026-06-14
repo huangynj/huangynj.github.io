@@ -56,7 +56,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css?v=11">
+    <link rel="stylesheet" href="css/custom.css?v=17">
 
     <!-- Image gallery -->
     <link rel="stylesheet" type="text/css" href="css/image_gallery.css">
@@ -123,20 +123,16 @@
         }
 
         .sub-section header {
-            cursor: pointer;
-            /* 将鼠标指针更改为手形，以指示可以点击 */
-            padding: 5px 5px 5px 5px;
-            /* 添加一些内边距: Top Right Bottom Left */
-            background-color: #f0f0f0;
-            /* 添加背景色 */
-            border: 1px solid #ccc;
-            /* 添加边框 */
             margin-top: 10px;
             /* 为每个标题添加一些外边距 */
             position: -webkit-sticky;
             position: sticky;
             top: 60px;
             z-index: 100;
+        }
+
+        .sub-section-toggle {
+            cursor: pointer;
         }
 
 
@@ -522,10 +518,12 @@
                     <a name="cape-k" id="cape-k"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Cloud-Aerosol-Meteorology-Radiation in Mixed-phase
-                                Clouds</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="cape-k-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Cloud-Aerosol-Meteorology-Radiation in Mixed-phase
+                                    Clouds</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="cape-k-content" hidden>
                             Stay tuned ...
                             <br>
                             OU Research News: <a target="_blank"
@@ -538,9 +536,11 @@
                     <a name="aerosol" id="aerosol"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Cloud-Aerosol Interaction in Convective Clouds</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="aerosol-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Cloud-Aerosol Interaction in Convective Clouds</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="aerosol-content" hidden>
                             Stay tuned ...
                             <br>
                             OU Research News: <a target="_blank"
@@ -553,9 +553,11 @@
                     <a name="cpcm" id="cpcm"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Convection-Permitting Regional Climate Modeling</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="cpcm-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Convection-Permitting Regional Climate Modeling</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="cpcm-content" hidden>
 
                             <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
@@ -670,10 +672,12 @@
                     <a name="hiwc" id="hiwc"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>High Ice Water Contents (HIWCs) in Tropical Convective
-                                Clouds</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="hiwc-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>High Ice Water Contents (HIWCs) in Tropical Convective
+                                    Clouds</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="hiwc-content" hidden>
 
                             <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
@@ -818,9 +822,11 @@
                     <a name="mpar"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Phased Array Radar Data Assimilation</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="mpar-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Phased Array Radar Data Assimilation</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="mpar-content" hidden>
                             <p align="justify" style="text-indent:1em">
                                 <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
@@ -925,9 +931,11 @@
                     <a name="les"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Large-eddy Simulation (LES) of Urban Convection</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="les-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Large-eddy Simulation (LES) of Urban Convection</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="les-content" hidden>
                             <p align="justify" style="text-indent:1em">
 
                             <ol class="academic-list" type="I">
@@ -1179,10 +1187,12 @@
                     <a name="sichuan"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Where does the torrential rainfall in China’s Sichuan
-                                Basin come from?</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="sichuan-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Where does the torrential rainfall in China’s Sichuan
+                                    Basin come from?</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="sichuan-content" hidden>
                             <p align="justify" style="text-indent:1em">
                             <ol class="academic-list" type="I">
                                 <li>
@@ -1252,9 +1262,11 @@
                     <a name="r2o"></a>
                     <section class="sub-section">
                         <header>
-                            <h3><span class="hand-icon">👉</span>Research to Operation (R2O)</h3>
+                            <h3><button type="button" class="sub-section-toggle" aria-expanded="false"
+                                    aria-controls="r2o-content"><span class="hand-icon"
+                                        aria-hidden="true">👉</span>Research to Operation (R2O)</button></h3>
                         </header>
-                        <div class="content">
+                        <div class="content" id="r2o-content" hidden>
                             <p align="justify" style="text-indent:1em"></p>
                             <ul align="justify" class="academic-list">
                                 <li>
@@ -2589,27 +2601,49 @@
 
         // 为每个子小节的标题添加点击事件监听器
         subSections.forEach(function (subSection) {
-            var header = subSection.querySelector('header');
-            header.addEventListener('click', function () {
-                var wasActive = subSection.classList.contains('active');
-                subSection.classList.toggle('active'); /* 切换 active 类 */
+            var toggle = subSection.querySelector('.sub-section-toggle');
+            var content = subSection.querySelector('.content');
+
+            if (!toggle || !content) return;
+
+            function setExpanded(isExpanded) {
+                subSection.classList.toggle('active', isExpanded);
+                toggle.setAttribute('aria-expanded', String(isExpanded));
+                content.hidden = !isExpanded;
+
                 var handIcon = subSection.querySelector('.hand-icon');
+                if (handIcon) {
+                    handIcon.innerHTML = isExpanded ? '👇' : '👉';
+                }
+            }
 
-                if (subSection.classList.contains('active')) {
-                    handIcon.innerHTML = '👇'; /* 如果小节展开，显示向下手指 */
-                } else {
-                    handIcon.innerHTML = '👉'; /* 如果小节折叠，显示向右手指 */
+            setExpanded(subSection.classList.contains('active'));
 
+            function toggleSection() {
+                var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                setExpanded(!isExpanded);
+
+                if (isExpanded) {
                     // Allow the DOM to update (collapse) before scrolling
                     setTimeout(function () {
                         var offset = 80; // Adjust based on your fixed navbar height
-                        var headerPosition = header.getBoundingClientRect().top + window.scrollY;
+                        var headerPosition = toggle.getBoundingClientRect().top + window.scrollY;
                         window.scrollTo({
                             top: headerPosition - offset,
                             behavior: 'smooth'
                         });
                     }, 50); // Short delay to ensure collapse layout shift happens first
                 }
+            }
+
+            toggle.addEventListener('click', toggleSection);
+
+            toggle.addEventListener('keydown', function (event) {
+                var key = event.key || event.code;
+                if (key !== 'Enter' && key !== 'ENTER' && key !== ' ' && key !== 'Space' &&
+                    key !== 'SPACE' && key !== 'Spacebar') return;
+                event.preventDefault();
+                toggleSection();
             });
         });
     </script>
@@ -2654,7 +2688,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Target elements to animate
-            const elementsToAnimate = document.querySelectorAll('.research-card, ul.academic-list li, ol.academic-list li, .sub-section header');
+            const elementsToAnimate = document.querySelectorAll('.research-card, ul.academic-list li, ol.academic-list li, .sub-section-toggle');
 
             // Add base class
             elementsToAnimate.forEach(el => {
