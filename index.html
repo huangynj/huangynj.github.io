@@ -328,7 +328,7 @@
     <!-- Home Section -->
     <section name="home" id="home" class="hero-section">
         <div class="container">
-            <div class="row" style="display: flex; align-items: stretch; flex-wrap: wrap; gap: 0;">
+            <div class="row hero-row">
                 <!-- Column 1: Photo -->
                 <div class="col-md-3 hero-column-fixed-height">
                     <div class="profile-card">
@@ -382,9 +382,8 @@
 
                 <!-- Column 3: LinkedIn Feed -->
                 <div class="col-md-5 hero-column-fixed-height">
-                    <div id="activity-feed"
-                        style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-md); height: 100%; max-height: 600px; overflow-y: auto;">
-                        <h4 style="margin-top: 0; margin-bottom: 2rem; color: var(--primary);"><i class="fa fa-rss"></i>
+                    <div id="activity-feed" class="hero-updates-card">
+                        <h4 class="hero-updates-title"><i class="fa fa-rss"></i>
                             Latest Updates</h4>
                         <div class='sk-ww-linkedin-profile-post' data-embed-id='25599160'></div>
                         <script src='https://widgets.sociablekit.com/linkedin-profile-posts/widget.js' defer></script>
