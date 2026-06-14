@@ -29,19 +29,24 @@ function reset_menus() {
 
 // Take action if the request on URI has internal link '#'
 function internal_link() {
-    var urlArray = window.location.href.split('#');
-    if (urlArray.length == 2 && urlArray[1] != "") {
-        switch (urlArray[1]) {
-            case "intro":        $('#tab-1-content').show(); break;
-            case "news":         $('#tab-2-content').show(); break;
-            case "publications": $('#tab-3-content').show(); break;
-            case "courses":      $('#tab-4-content').show(); break;
-            case "awards":       $('#tab-5-content').show(); break;
-            case "service":      $('#tab-6-content').show(); break;
-            case "research":     $('#tab-7-content').show(); break;
-            case "contact":      $('#tab-9-content').show(); break;
-            default: break;
-        }
+    var hash = window.location.hash ? decodeURIComponent(window.location.hash.substring(1)) : "";
+    var contentByHash = {
+        intro: "#tab-intro-content",
+        news: "#tab-news-content",
+        research: "#tab-research-content",
+        publications: "#tab-publications-content",
+        awards: "#tab-awards-content",
+        advising: "#tab-advising-content",
+        service: "#tab-service-content",
+        contact: "#tab-contact-content",
+        courses: "#tab-courses-content",
+        systems: "#tab-systems-content",
+        links: "#tab-links-content"
+    };
+
+    if (hash && contentByHash[hash]) {
+        reset_menus();
+        $(contentByHash[hash]).show();
     }
 }
 
@@ -76,9 +81,10 @@ jQuery(document).ready(function($) {
                                         windowWidth = $(window).width();
                                         sizing(windowWidth);
                                         }
-                                        });
+                       });
                        sizing(windowWidth);
                        internal_link();
+                       $(window).on('hashchange', internal_link);
                        });
 
 
