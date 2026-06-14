@@ -328,8 +328,16 @@ $(document).ready(function() {
             }
             return response.json();
         })
-        .then(citations => {
+        .then(data => {
+            let citations = data.cites_per_year || data;
             window.chartData = { pubCounts, citations };
+            
+            if (data.total_citations !== undefined) {
+                $('#metric-citations').text(data.total_citations);
+                $('#metric-hindex').text(data.h_index);
+                $('#metric-i10index').text(data.i10_index);
+            }
+            
             renderMetricsChart(); // Render if container is already visible
         })
         .catch(error => {

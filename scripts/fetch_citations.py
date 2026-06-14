@@ -14,6 +14,9 @@ def fetch_scholar_data():
         
         # Extract citations per year
         cites_per_year = author.get('cites_per_year', {})
+        total_citations = author.get('citedby', 0)
+        h_index = author.get('hindex', 0)
+        i10_index = author.get('i10index', 0)
         
         if not cites_per_year:
             print("Warning: No citation data found. Scholar might be blocking the request.")
@@ -22,7 +25,12 @@ def fetch_scholar_data():
         # Sort and write to citations.json
         output_file = 'citations.json'
         
-        # Read existing file to check if it changed (optional)
+        new_data = {
+            "total_citations": total_citations,
+            "h_index": h_index,
+            "i10_index": i10_index,
+            "cites_per_year": dict(sorted(cites_per_year.items()))
+        }
         existing_data = {}
         if os.path.exists(output_file):
             with open(output_file, 'r') as f:
@@ -31,10 +39,14 @@ def fetch_scholar_data():
                 except json.JSONDecodeError:
                     pass
 
-        with open(output_file, 'w') as f:
-            json.dump(cites_per_year, f, indent=4)
+        if existing_data == new_data:
+            print("No changes in citation data.")
+            return True
             
-        print(f"Successfully saved {len(cites_per_year)} years of citation data to {output_file}.")
+        with open(output_file, 'w') as f:
+            json.dump(new_data, f, indent=4)
+            
+        print("Successfully saved updated citation data to citations.json.")
         return True
 
     except Exception as e:
