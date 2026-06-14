@@ -172,7 +172,24 @@ $(document).ready(function() {
             });
         });
         
-        // Append to li
-        $(this).append(copyBtn);
+        // Append to li, adding a space before it
+        $(this).append(' ').append(copyBtn);
     });
+});
+
+// ==========================================================================
+// SCROLL PROGRESS BAR
+// ==========================================================================
+$(window).on('scroll', function() {
+    // Calculate how far the user has scrolled down the page
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    
+    // Calculate the total scrollable height of the page
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Calculate the scroll percentage
+    var scrolled = (winScroll / height) * 100;
+    
+    // Update the width of the progress bar
+    $('#scroll-progress').css('width', scrolled + '%');
 });

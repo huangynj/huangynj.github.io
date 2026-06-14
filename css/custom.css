@@ -517,3 +517,18 @@ ol li ol li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border-color: var(--primary);
 }
+
+/* ==========================================================================
+   SCROLL PROGRESS BAR
+   ========================================================================== */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%; /* Will be updated via JS */
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), #00c6ff);
+    z-index: 10000; /* Above the navbar (9999) */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: width 0.1s ease-out;
+}
