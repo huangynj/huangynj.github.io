@@ -197,6 +197,8 @@ $(window).on('scroll', function() {
 // ==========================================================================
 // PUBLICATION METRICS CHART
 // ==========================================================================
+let metricsChartInstance = null;
+
 $(document).ready(function() {
     if ($('#metricsChart').length === 0) return;
 
@@ -227,98 +229,111 @@ $(document).ready(function() {
             return response.json();
         })
         .then(citations => {
-            renderChart(pubCounts, citations);
+            window.chartData = { pubCounts, citations };
         })
         .catch(error => {
             console.error('Error fetching citations:', error);
-            // Fallback to empty if fetch fails
-            renderChart(pubCounts, {});
+            window.chartData = { pubCounts, citations: {} };
         });
+});
 
-    function renderChart(pubCounts, citations) {
-        // Prepare arrays for Chart.js (sort years ascending)
-        let labels = Object.keys(pubCounts).sort();
-        let pubData = labels.map(year => pubCounts[year] || 0);
-        let citData = labels.map(year => citations[year] || 0);
+window.toggleMetricsChart = function() {
+    $('#metricsChartContainer').slideToggle(300, function() {
+        // Only render the chart after the container is fully visible the first time
+        if (!metricsChartInstance && window.chartData) {
+            let pubCounts = window.chartData.pubCounts;
+            let citations = window.chartData.citations;
 
-        // 3. Render Chart
-        const ctx = document.getElementById('metricsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Publications per Year',
-                        data: pubData,
-                        backgroundColor: 'rgba(24, 188, 156, 0.7)', // Theme green (#18bc9c)
-                        borderColor: 'rgba(24, 188, 156, 1)',
-                        borderWidth: 1,
-                        yAxisID: 'y',
-                        order: 2
-                    },
-                    {
-                        label: 'Citations (Google Scholar)',
-                        data: citData,
-                        type: 'line',
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 2,
-                        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-                        yAxisID: 'y1',
-                        tension: 0.3,
-                        order: 1
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                interaction: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: { display: false }
-                    },
-                    y: {
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        title: {
-                            display: true,
-                            text: 'Publications',
-                            color: '#18bc9c'
+            // Combine all years from both objects to ensure no missing years
+            let allYears = new Set([...Object.keys(pubCounts), ...Object.keys(citations)]);
+            let labels = Array.from(allYears).sort();
+
+            let pubData = labels.map(year => pubCounts[year] || 0);
+            let citData = labels.map(year => citations[year] || 0);
+
+            // Render Chart
+            const ctx = document.getElementById('metricsChart').getContext('2d');
+            metricsChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Publications per Year',
+                            data: pubData,
+                            backgroundColor: 'rgba(24, 188, 156, 0.7)', // Theme green (#18bc9c)
+                            borderColor: 'rgba(24, 188, 156, 1)',
+                            borderWidth: 1,
+                            yAxisID: 'y',
+                            order: 2
                         },
-                        beginAtZero: true,
-                        ticks: {
-                            stepSize: 1
+                        {
+                            label: 'Citations (Google Scholar)',
+                            data: citData,
+                            type: 'line',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                            yAxisID: 'y1',
+                            tension: 0.3,
+                            order: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 500 // Smooth animation
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Publications',
+                                color: '#18bc9c'
+                            },
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Citations',
+                                color: 'rgba(255, 99, 132, 1)'
+                            },
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false,
+                            },
                         }
                     },
-                    y1: {
-                        type: 'linear',
-                        display: true,
-                        position: 'right',
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
                         title: {
-                            display: true,
-                            text: 'Citations',
-                            color: 'rgba(255, 99, 132, 1)'
-                        },
-                        beginAtZero: true,
-                        grid: {
-                            drawOnChartArea: false, // only want the grid lines for one axis to show up
-                        },
-                    }
-                },
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: false
+                            display: false
+                        }
                     }
                 }
-            }
-        });
-    }
-});
+            });
+        }
+    });
+};
