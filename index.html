@@ -91,7 +91,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/menucollapse.js"></script>
     <script type="text/javascript" src="js/arrow78.js?v=2"></script>
-    <script type="text/javascript" src="js/custom.js?v=19"></script>
+    <script type="text/javascript" src="js/custom.js?v=20"></script>
 
     <!-- Chart.js for Publication Metrics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -215,9 +215,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span><a href="#"><img border="0" width="40" src="images/CLOUD2S_transparent_bg.png" /></a></span>
-                <span><a href="#"><img border="0" width="80" src="images/CAPS_logo.png" /></a></span>
-                <span><a href="#"><img border="0" width="170" src="images/metr-website-logo-red.png" /></a></span>
+                <span><a href="#"><img border="0" width="40" src="images/CLOUD2S_transparent_bg.png" alt="CLOUD2S logo" /></a></span>
+                <span><a href="#"><img border="0" width="80" src="images/CAPS_logo.png" alt="Center for Analysis and Prediction of Storms logo" /></a></span>
+                <span><a href="#"><img border="0" width="170" src="images/metr-website-logo-red.png" alt="University of Oklahoma School of Meteorology logo" /></a></span>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -346,13 +346,13 @@
                         <div class="hero-info">
                             <p>
                                 <i class="fa fa-university"></i>
-                                <a href="http://www.caps.ou.edu" target="_blank"> Center for Analysis and Prediction of
+                                <a href="http://www.caps.ou.edu" target="_blank" rel="noopener noreferrer"> Center for Analysis and Prediction of
                                     Storms (CAPS)</a>
                             </p>
                             <p>
                                 <i class="fa fa-university"></i>
-                                <a href="https://ou.edu/ags/meteorology" target="_blank"> School of Meteorology</a>,
-                                <a href="http://www.ou.edu" target="_blank"> University of Oklahoma</a>
+                                <a href="https://ou.edu/ags/meteorology" target="_blank" rel="noopener noreferrer"> School of Meteorology</a>,
+                                <a href="http://www.ou.edu" target="_blank" rel="noopener noreferrer"> University of Oklahoma</a>
                             </p>
                             <p>
                                 <i class="fa fa-map-marker"></i> 120 David L. Boren Blvd., Norman, OK 73072
@@ -365,13 +365,13 @@
 
                         <div class="social-links">
                             <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=OUrJeeMAAAAJ"
-                                class="label label-info">Google Scholar</a>
+                                class="label label-info" rel="noopener noreferrer">Google Scholar</a>
                             <a target="_blank" href="https://www.researchgate.net/profile/Yongjie_Huang2"
-                                class="label label-info">ResearchGate</a>
+                                class="label label-info" rel="noopener noreferrer">ResearchGate</a>
                             <a target="_blank" href="https://www.webofscience.com/wos/author/rid/C-3525-2014"
-                                class="label label-info">ResearcherID</a>
+                                class="label label-info" rel="noopener noreferrer">ResearcherID</a>
                             <a target="_blank" href="http://orcid.org/0000-0001-7883-8768"
-                                class="label label-info">ORCID</a>
+                                class="label label-info" rel="noopener noreferrer">ORCID</a>
                         </div>
                     </div>
                 </div>
@@ -387,12 +387,12 @@
                 </div>
             </div>
             <!--<p><a href="#" class="btn btn-primary">More &raquo;</a></p>-->
-            <b class="expandshow" style="display:none;" id="tab-1">
+            <b class="expandshow" style="display:none;" id="expand-all-sections-control">
                 <button class="btn btn-primary btn-lg btn-block" style="width: 100%;"
                     onclick="javascript:$('.allshow').show();$('.noshow').hide();$('.collapseshow').show();$('.expandshow').hide();">EXPAND
                     ALL SECTIONS <span class="glyphicon glyphicon-chevron-down"></span></button>
             </b>
-            <b class="collapseshow" style="display:none;" id="tab-1">
+            <b class="collapseshow" style="display:none;" id="collapse-all-sections-control">
                 <button class="btn btn-primary btn-lg btn-block" style="display: block; width: 100%;"
                     onclick="javascript:$('.allshow').hide();$('.noshow').show();$('.expandshow').show();$('.collapseshow').hide();">COLLAPSE
                     ALL SECTIONS <span class="glyphicon glyphicon-chevron-up"></span></button>
@@ -407,7 +407,7 @@
             <div style="text-align: left; margin-top:10px" class="col-md-12">
                 <!--<h2>Welcome!</h2>-->
 
-                <b class="noshow" style="display:none;" id="tab-1">
+                <b class="noshow" style="display:none;" id="intro-mobile-toggle">
                     <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;"
                         onclick="javascript:$('#tab-intro-content').toggle();">Introduction <span
                             class="glyphicon glyphicon-chevron-down"></span></button>
@@ -430,7 +430,7 @@
                         Dr. <b>Yongjie Huang</b> (黄永杰) currently works as Senior Research Scientist at the
                         <a href="http://www.caps.ou.edu">Center for Analysis and Prediction of Storms (CAPS)</a>
                         and Adjunct Faculty at the
-                        <a href="https://ou.edu/ags/meteorology" target="_blank"> School of Meteorology</a>,
+                        <a href="https://ou.edu/ags/meteorology" target="_blank" rel="noopener noreferrer"> School of Meteorology</a>,
                         <a href="http://www.ou.edu">University of Oklahoma</a>.
                         His current research aims to
                         <!--
@@ -459,7 +459,7 @@
                         <!--
                                 https://www.wordclouds.com
                             -->
-                        <img loading="lazy" src="images/hyj_research_word_cloud.png" style="width: 80%; height: 80%">
+                        <img loading="lazy" src="images/hyj_research_word_cloud.png" alt="Word cloud of publication title keywords" style="width: 80%; height: 80%">
                         <br>
                         The word cloud is generated using the titles of all <a href="#publications">publications</a>.
                     </div>
@@ -529,7 +529,7 @@
     <section name="research" id="research">
         <div class="container lead">
             <div style="text-align: left; margin-top:10px" class="col-md-12">
-                <b class="noshow" style="display:none;" id="tab-7">
+                <b class="noshow" style="display:none;" id="research-mobile-toggle">
                     <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;"
                         onclick="javascript:$('#tab-research-content').toggle();">Research <span
                             class="glyphicon glyphicon-chevron-down"></span></button>
@@ -561,7 +561,7 @@
                             Stay tuned ...
                             <br>
                             OU Research News: <a target="_blank"
-                                href="https://www.ou.edu/news/articles/2024/september/ou-researchers-study-cloud-data-from-tasmania-to-texas">
+                                href="https://www.ou.edu/news/articles/2024/september/ou-researchers-study-cloud-data-from-tasmania-to-texas" rel="noopener noreferrer">
                                 OU Researchers Study Cloud Data from Tasmania to Texas</a>
                         </div>
                     </section>
@@ -576,7 +576,7 @@
                             Stay tuned ...
                             <br>
                             OU Research News: <a target="_blank"
-                                href="https://www.ou.edu/research-norman/news-events/2023/ou-weather-researchers-explore-deep-convective-clouds-in-coastal-cities">OU
+                                href="https://www.ou.edu/research-norman/news-events/2023/ou-weather-researchers-explore-deep-convective-clouds-in-coastal-cities" rel="noopener noreferrer">OU
                                 Weather Researchers Explore Deep Convective Clouds in Coastal Cities</a>
                         </div>
                     </section>
@@ -591,7 +591,7 @@
 
                             <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
-                                <img loading="lazy" src="images/Peru_RCM/Peru_RCM_Domains.png"
+                                <img loading="lazy" src="images/Peru_RCM/Peru_RCM_Domains.png" alt="Convection-permitting regional climate model domains over the Peruvian Central Andes"
                                     style="width: 80%; height: 80%">
                                 <br>
                                 Convection-Permitting Regional Climate Model Domains Covering the Peruvian Central Andes
@@ -607,11 +607,11 @@
                                     with particularly complex terrain. The simulated precipitation is most sensitive to
                                     planetary boundary layer (PBL), followed by microphysics, and least sensitive to
                                     land surface model schemes (<a target="_blank"
-                                        href="https://doi.org/10.1175/JHM-D-22-0173.1">Huang et al. 2023a</a>).
+                                        href="https://doi.org/10.1175/JHM-D-22-0173.1" rel="noopener noreferrer">Huang et al. 2023a</a>).
                                     Sensitivity experiments suggest that the different free-troposphere mixing among
                                     different PBL schemes is the primary factor responsible for the discrepancies in the
                                     vertical thermodynamic structure and simulated precipitation (<a target="_blank"
-                                        href="https://doi.org/10.1029/2023JD038553">Hu et al. 2023</a>).
+                                        href="https://doi.org/10.1029/2023JD038553" rel="noopener noreferrer">Hu et al. 2023</a>).
                                 </li>
 
                                 <li> Two 3-km CPM simulations along with a 4-km simulation covering South America, three
@@ -626,7 +626,7 @@
                                     drivers for precipitation and MCS genesis along the east slope of the Andes, while
                                     thermodynamic factors control the precipitation and MCS activity in the western
                                     Amazon Basin and over elevated mountainous regions. (<a target="_blank"
-                                        href="https://doi.org/10.1029/2023JD040394">Huang et al. 2024a</a>).
+                                        href="https://doi.org/10.1029/2023JD040394" rel="noopener noreferrer">Huang et al. 2024a</a>).
                                 </li>
 
                                 <li> Through comparing 3-km historical and future CPM regional climate simulations in
@@ -635,7 +635,7 @@
                                     the Peruvian Central Andes under a warming climate. Increased convective available
                                     potential energy (CAPE), convective inhibition (CIN), and precipitable water (PW) in
                                     a warming climate shift the convection population (<a target="_blank"
-                                        href="https://doi.org/10.1002/qj.4820">Huang et al. 2024b</a>).
+                                        href="https://doi.org/10.1002/qj.4820" rel="noopener noreferrer">Huang et al. 2024b</a>).
                                 </li>
                             </ol>
                             </p><br>
@@ -650,9 +650,9 @@
                                     simulations.
                                     <i>Quarterly Journal of the Royal Meteorological Society</i>, 1–20.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1002/qj.4820">https://doi.org/10.1002/qj.4820</a>.
+                                        href="https://doi.org/10.1002/qj.4820" rel="noopener noreferrer">https://doi.org/10.1002/qj.4820</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="papers/HuangEtAl_2024QJ.pdf">Download</a></span>
+                                            href="papers/HuangEtAl_2024QJ.pdf" rel="noopener noreferrer">Download</a></span>
                                 </p>
 
                                 <p>
@@ -663,12 +663,12 @@
                                     Central Andes in Multi 5-Year Convection-Permitting Simulations.
                                     <i>Journal of Geophysical Research: Atmospheres</i>, 129, e2023JD040394.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1029/2023JD040394">https://doi.org/10.1029/2023JD040394</a>.
+                                        href="https://doi.org/10.1029/2023JD040394" rel="noopener noreferrer">https://doi.org/10.1029/2023JD040394</a>.
                                     <a target="_blank"
-                                        href="https://doi.org/10.22541/essoar.170000370.07634797/v1">[Preprint
+                                        href="https://doi.org/10.22541/essoar.170000370.07634797/v1" rel="noopener noreferrer">[Preprint
                                         Version]</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="papers/HuangEtAl_2024JGR.pdf">Download</a></span>
+                                            href="papers/HuangEtAl_2024JGR.pdf" rel="noopener noreferrer">Download</a></span>
                                 </p>
 
                                 <p>
@@ -678,9 +678,9 @@
                                     Strong Sensitivity to Planetary Boundary Layer Parameterization.
                                     <i>Journal of Hydrometeorology</i>, 24, 1969–1990.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1175/JHM-D-22-0173.1">https://doi.org/10.1175/JHM-D-22-0173.1</a>.
+                                        href="https://doi.org/10.1175/JHM-D-22-0173.1" rel="noopener noreferrer">https://doi.org/10.1175/JHM-D-22-0173.1</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="papers/HuangEtAl_2023JHM.pdf">Download</a></span>
+                                            href="papers/HuangEtAl_2023JHM.pdf" rel="noopener noreferrer">Download</a></span>
                                 </p>
 
                                 <p>
@@ -690,9 +690,9 @@
                                     over the Amazon during the wet season.
                                     <i>Journal of Geophysical Research-Atmospheres</i>, 128, e2023JD038553.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1029/2023JD038553">https://doi.org/10.1029/2023JD038553</a>.
+                                        href="https://doi.org/10.1029/2023JD038553" rel="noopener noreferrer">https://doi.org/10.1029/2023JD038553</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="./papers/HuEtAl_2023JGR.pdf">Download</a></span>
+                                            href="./papers/HuEtAl_2023JGR.pdf" rel="noopener noreferrer">Download</a></span>
                                 </p>
                             </div>
                         </div>
@@ -709,14 +709,14 @@
 
                             <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
-                                <img loading="lazy" src="images/HIWC/haic_hiwc_logo.png"
+                                <img loading="lazy" src="images/HIWC/haic_hiwc_logo.png" alt="HAIC-HIWC field campaign logo"
                                     style="width: 80%; height: 80%">
                                 <br>
                                 Image from: <a target="_blank"
-                                    href="https://www.eol.ucar.edu/field_projects/haic-hiwc">https://www.eol.ucar.edu/field_projects/haic-hiwc</a>
+                                    href="https://www.eol.ucar.edu/field_projects/haic-hiwc" rel="noopener noreferrer">https://www.eol.ucar.edu/field_projects/haic-hiwc</a>
                                 <!--
                                 <br><br><br>
-                                <img loading="lazy" src="images/HIWC/Huang_et_al_2020MWR_PAR_Clear_Air_DA_Supercell.jpeg" style="width: 80%; height: 80%">
+                                <img loading="lazy" src="images/HIWC/Huang_et_al_2020MWR_PAR_Clear_Air_DA_Supercell.jpeg" alt="Supercell simulation from phased array radar data assimilation study" style="width: 80%; height: 80%">
                                 -->
                             </div>
                             <br>
@@ -727,8 +727,8 @@
                                     Numerous small ice crystals in tropical convective storms are difficult to detect
                                     with pilot radars onboard commercial aircraft and can cause
                                     aircraft power-loss and damage events (<a target="_blank"
-                                        href="https://doi.org/10.1175/JAS-D-21-0015.1">Hu et al., 2021</a>,
-                                    <a target="_blank" href="https://doi.org/10.1175/JAS-D-22-0008.1">2022</a>).
+                                        href="https://doi.org/10.1175/JAS-D-21-0015.1" rel="noopener noreferrer">Hu et al., 2021</a>,
+                                    <a target="_blank" href="https://doi.org/10.1175/JAS-D-22-0008.1" rel="noopener noreferrer">2022</a>).
                                 </li>
 
                                 <p align="justify" style="text-indent:1em"></p>
@@ -739,7 +739,7 @@
                                     <i>key processes are still lacking or misrepresented in current numerical models to
                                         realistically
                                         simulate the HIWC phenomenon in tropical convective storms</i>
-                                    (<a target="_blank" href="https://doi.org/10.5194/acp-21-6919-2021">Huang et al.,
+                                    (<a target="_blank" href="https://doi.org/10.5194/acp-21-6919-2021" rel="noopener noreferrer">Huang et al.,
                                         2021</a>).
                                 </li>
 
@@ -750,7 +750,7 @@
                                     were implemented in Predicted Particle Properties (P3) scheme with two-ice option,
                                     which has two “free” ice categories to represent all
                                     ice-phase hydrometeors (<a target="_blank"
-                                        href="https://doi.org/10.5194/acp-22-2365-2022">Huang et al., 2022</a>).
+                                        href="https://doi.org/10.5194/acp-22-2365-2022" rel="noopener noreferrer">Huang et al., 2022</a>).
                                 </li>
                                 <!-- <p align="justify" style="text-indent:1em"></p>
                             <li>Regardless of the horizontal grid spacing or aerosol profile used, without including SIP processes the model produces 
@@ -769,13 +769,13 @@
                                         observations in terms of ice number concentrations and radar reflectivity</b>,
                                     which confirms the dominant role of SIP processes in the
                                     formation of numerous small crystals in HIWC regions.
-                                    (<a target="_blank" href="https://doi.org/10.5194/acp-22-2365-2022">Huang et al.,
+                                    (<a target="_blank" href="https://doi.org/10.5194/acp-22-2365-2022" rel="noopener noreferrer">Huang et al.,
                                         2022</a>).
                                 </li>
 
                                 <p align="justify" style="text-indent:1em"></p>
                                 <div class="container" align="center" style="width: 100%; height: auto">
-                                    <img loading="lazy" src="images/HIWC/HIWC_SIP.png"
+                                    <img loading="lazy" src="images/HIWC/HIWC_SIP.png" alt="Secondary ice production processes in HIWC simulations"
                                         style="width: 100%; height: 100%">
                                 </div>
                             </ol>
@@ -791,9 +791,9 @@
                                     during the HAIC-HIWC field campaign: dominant role of secondary ice production.
                                     <i>Atmospheric Chemistry and Physics</i>, 22, 2365–2384.
                                     <a target="_blank"
-                                        href="https://doi.org/10.5194/acp-22-2365-2022">https://doi.org/10.5194/acp-22-2365-2022</a>.
+                                        href="https://doi.org/10.5194/acp-22-2365-2022" rel="noopener noreferrer">https://doi.org/10.5194/acp-22-2365-2022</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="https://acp.copernicus.org/articles/22/2365/2022/acp-22-2365-2022.pdf">
+                                            href="https://acp.copernicus.org/articles/22/2365/2022/acp-22-2365-2022.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -807,9 +807,9 @@
                                     Simulations Using Bulk Microphysical Schemes.
                                     <i>Atmospheric Chemistry and Physics</i>, 21, 6919–6944.
                                     <a target="_blank"
-                                        href="https://doi.org/10.5194/acp-21-6919-2021">https://doi.org/10.5194/acp-21-6919-2021</a>.
+                                        href="https://doi.org/10.5194/acp-21-6919-2021" rel="noopener noreferrer">https://doi.org/10.5194/acp-21-6919-2021</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="https://acp.copernicus.org/articles/21/6919/2021/acp-21-6919-2021.pdf">
+                                            href="https://acp.copernicus.org/articles/21/6919/2021/acp-21-6919-2021.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -821,8 +821,8 @@
                                     HAIC-HIWC Cayenne Field Campaign.
                                     <i>Journal of the Atmospheric Sciences</i>, 78, 2957–2981.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1175/JAS-D-21-0015.1">https://doi.org/10.1175/JAS-D-21-0015.1</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2021JAS.pdf">
+                                        href="https://doi.org/10.1175/JAS-D-21-0015.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-21-0015.1</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2021JAS.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -835,8 +835,8 @@
                                     Environmental Conditions: Results from the HAIC-HIWC Cayenne Campaign.
                                     <i>Journal of the Atmospheric Sciences</i>, 79, 3103–3134.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1175/JAS-D-22-0008.1">https://doi.org/10.1175/JAS-D-22-0008.1</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2022JAS.pdf">
+                                        href="https://doi.org/10.1175/JAS-D-22-0008.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-22-0008.1</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2022JAS.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -856,7 +856,7 @@
                             <p align="justify" style="text-indent:1em">
                                 <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
-                                <img loading="lazy" src="images/MPAR_DA/mpar.png" style="width: 80%; height: 80%">
+                                <img loading="lazy" src="images/MPAR_DA/mpar.png" alt="Phased array radar system illustration" style="width: 80%; height: 80%">
                             </div>
                             </p>
                             <br>
@@ -884,7 +884,7 @@
                                     <!-- <b>The more accurate track forecast, stronger vertical motion, and better-maintained supercell can be attributed to the better analysis 
                                 ad prediction of the mean environmental winds and linear and nonlinear dynamic forces.</b> 
                             -->
-                                    (<a target="_blank" href="https://doi.org/10.1175/MWR-D-19-0391.1">Huang et al.,
+                                    (<a target="_blank" href="https://doi.org/10.1175/MWR-D-19-0391.1" rel="noopener noreferrer">Huang et al.,
                                         2020</a>).
                                 </li>
 
@@ -893,7 +893,7 @@
                                     OSSEs indicate that assimilating clear-air radial velocity observations can capture
                                     both surface-based and elevated convection initiation processes
                                     along boundary-layer convergence zones
-                                    (<a target="_blank" href="https://doi.org/10.1175/MWR-D-21-0199.1">Huang et al.,
+                                    (<a target="_blank" href="https://doi.org/10.1175/MWR-D-21-0199.1" rel="noopener noreferrer">Huang et al.,
                                         2022</a>).
                                 </li>
 
@@ -910,13 +910,13 @@
                                     experiment study.
                                     <i>Monthly Weather Review</i>, 148 (9), 3825–3845.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1175/MWR-D-19-0391.1">https://doi.org/10.1175/MWR-D-19-0391.1</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2020MWR.pdf">
+                                        href="https://doi.org/10.1175/MWR-D-19-0391.1" rel="noopener noreferrer">https://doi.org/10.1175/MWR-D-19-0391.1</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2020MWR.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                     <br>
                                     (<a target="_blank"
-                                        href="https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/366300">Oral
+                                        href="https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/366300" rel="noopener noreferrer">Oral
                                         presentation</a> at
                                     <i>100<sup>th</sup> American Meteorological Society (AMS) annual meeting</i>,
                                     Boston, 2020)
@@ -929,13 +929,13 @@
                                     An observing system simulation experiment study.
                                     <i>Monthly Weather Review</i>, 150, 1563–1583.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1175/MWR-D-21-0199.1">https://doi.org/10.1175/MWR-D-21-0199.1</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2022MWR.pdf">
+                                        href="https://doi.org/10.1175/MWR-D-21-0199.1" rel="noopener noreferrer">https://doi.org/10.1175/MWR-D-21-0199.1</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2022MWR.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                     <br>
                                     (<a target="_blank"
-                                        href="https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382713">Oral
+                                        href="https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382713" rel="noopener noreferrer">Oral
                                         presentation</a> at
                                     <i>101<sup>st</sup> American Meteorological Society (AMS) annual meeting</i>,
                                     online, 2021)
@@ -946,6 +946,7 @@
                             <div class="container" align="center" style="width: 100%; height: auto">
                                 <img loading="lazy"
                                     src="images/MPAR_DA/Huang_et_al_2020MWR_PAR_Clear_Air_DA_Supercell.jpeg"
+                                    alt="Supercell forecast structure from phased array radar data assimilation"
                                     style="width: 80%; height: 80%">
                             </div>
 
@@ -991,19 +992,19 @@
                                     </span>) in the coastal
                                     metropolitan city of Guangzhou, China to understand the driving
                                     forces that caused the predicted showers to instead become a deluge (<a
-                                        target="_blank" href="https://doi.org/10.1029/2018JD029668">Huang et al.,
+                                        target="_blank" href="https://doi.org/10.1029/2018JD029668" rel="noopener noreferrer">Huang et al.,
                                         2019a</a>).
 
                                     <span class="label label-success"> <a target="_blank"
-                                            href="https://www.facebook.com/NCAR.UCAR/videos/337658653748299/?__xts__[0]=68.ARDsiFVaPg3Zv_VOEmZKest_opv-nhTGOidq3yRCv-apYf8FMU4if3a8gEMNG3qNBMWFGa1jiqvp_uy5RyCFMyyPo43-JQT6I5lxAlZHZH6RShcroY3AerNil8UUKAHjpPdDAIkka68Ob_1SpjCvQ-G1aGJiLnyoMQss8Hl1i3AlqDDCXlIpYQof_-PgAHRd80j6vLZZ5NuHDVn9yG_XLjV8uzFCoPbO40V7p3AZ4dli922CKkYpb_m5710pgdh3K5z0jYe9ghATkgtq44s683Ls8j9r2HLRBbAyryAySvqgD4i-Ig3zQFJIknL2yqv85bAjKiR8E3lr9ewTlyvdHFvH6MY6mRec&__tn__=H-R">
+                                            href="https://www.facebook.com/NCAR.UCAR/videos/337658653748299/?__xts__[0]=68.ARDsiFVaPg3Zv_VOEmZKest_opv-nhTGOidq3yRCv-apYf8FMU4if3a8gEMNG3qNBMWFGa1jiqvp_uy5RyCFMyyPo43-JQT6I5lxAlZHZH6RShcroY3AerNil8UUKAHjpPdDAIkka68Ob_1SpjCvQ-G1aGJiLnyoMQss8Hl1i3AlqDDCXlIpYQof_-PgAHRd80j6vLZZ5NuHDVn9yG_XLjV8uzFCoPbO40V7p3AZ4dli922CKkYpb_m5710pgdh3K5z0jYe9ghATkgtq44s683Ls8j9r2HLRBbAyryAySvqgD4i-Ig3zQFJIknL2yqv85bAjKiR8E3lr9ewTlyvdHFvH6MY6mRec&__tn__=H-R" rel="noopener noreferrer">
                                             <font color=white>Facebook</font>
                                         </a></span>
                                     <span class="label label-success"> <a target="_blank"
-                                            href="https://twitter.com/NCAR_Science/status/1086018232333553665">
+                                            href="https://twitter.com/NCAR_Science/status/1086018232333553665" rel="noopener noreferrer">
                                             <font color=white>Twitter</font>
                                         </a></span>
                                     <span class="label label-success"> <a target="_blank"
-                                            href="https://www.instagram.com/p/BsvyjmQFD6a/?utm_source=ig_web_button_share_sheet">
+                                            href="https://www.instagram.com/p/BsvyjmQFD6a/?utm_source=ig_web_button_share_sheet" rel="noopener noreferrer">
                                             <font color=white>Instagram</font>
                                         </a></span>
                                 </li>
@@ -1025,7 +1026,7 @@
                                     during this severe local storm. Buoyancy and dynamic acceleration and the
                                     shallow
                                     weak cool pools jointly supported the sustained and strong slantwise
-                                    updrafts (<a target="_blank" href="https://doi.org/10.1029/2018JD030229">Huang
+                                    updrafts (<a target="_blank" href="https://doi.org/10.1029/2018JD030229" rel="noopener noreferrer">Huang
                                         et
                                         al., 2019b</a>).
                                 </li>
@@ -1037,7 +1038,7 @@
                                     <!-- Full-width images with number text -->
                                     <div class="mySlides">
                                         <div class="numbertext">1 / 4</div>
-                                        <img loading="lazy" src="images/JGR_images/3D_structure.jpg"
+                                        <img loading="lazy" src="images/JGR_images/3D_structure.jpg" alt="Three-dimensional structure of Guangzhou urban convection"
                                             style="width: 80%; height: auto">
                                     </div>
 
@@ -1045,6 +1046,7 @@
                                         <div class="numbertext">2 / 4</div>
                                         <img loading="lazy"
                                             src="images/JGR_images/Ingredients_for_high_precipitation_rate.jpeg"
+                                            alt="Ingredients for high precipitation rate in the Guangzhou urban convection case"
                                             style="width: 80%; height: auto">
                                     </div>
 
@@ -1052,12 +1054,13 @@
                                         <div class="numbertext">3 / 4</div>
                                         <img loading="lazy"
                                             src="images/JGR_images/Vertical_updrafts_low_echo_centroid_structure.jpeg"
+                                            alt="Vertical updrafts and low echo centroid storm structure"
                                             style="width: 80%; height: auto">
                                     </div>
 
                                     <div class="mySlides">
                                         <div class="numbertext">4 / 4</div>
-                                        <img loading="lazy" src="images/JGR_images/Schematic_diagram.jpeg"
+                                        <img loading="lazy" src="images/JGR_images/Schematic_diagram.jpeg" alt="Schematic diagram of mechanisms supporting extreme rainfall"
                                             style="width: 70%; height: 70%">
                                     </div>
 
@@ -1143,18 +1146,18 @@
                             <b><i>rain water evaporation</i></b> dominates the cold pool intensity and distribution, which influences the storm moving and subsequent 
                             convection propagation, and finally the intensity and distribution of surface precipitation 
                             -->
-                                    (<a target="_blank" href="https://doi.org/10.1016/j.atmosres.2020.104939">Huang et
+                                    (<a target="_blank" href="https://doi.org/10.1016/j.atmosres.2020.104939" rel="noopener noreferrer">Huang et
                                         al., 2020</a>).
                                 </li>
 
                                 <br><br>
                                 <div class="container" align="center" style="width: 100%; height: auto">
                                     <div class="col-sm-5">
-                                        <img loading="lazy" src="images/case0507_mp/CASE0507_Mean_22-23_MP.jpg"
+                                        <img loading="lazy" src="images/case0507_mp/CASE0507_Mean_22-23_MP.jpg" alt="Mean microphysical process rates in the May 7 Guangzhou convection case"
                                             style="width: 80%; height: 100%">
                                     </div>
                                     <div class="col-sm-7">
-                                        <img loading="lazy" src="images/case0507_mp/CASE0507_MP_NO_LHrv.jpeg"
+                                        <img loading="lazy" src="images/case0507_mp/CASE0507_MP_NO_LHrv.jpeg" alt="Microphysical process sensitivity simulation without latent heating from rain evaporation"
                                             style="width: 100%; height: 100%">
                                     </div>
                                 </div>
@@ -1172,8 +1175,8 @@
                                     the WRF Model.
                                     <i>Journal of Geophysical Research-Atmospheres</i>, 124, 1370–1391.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1029/2018JD029668">https://doi.org/10.1029/2018JD029668</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2019JGR.pdf">
+                                        href="https://doi.org/10.1029/2018JD029668" rel="noopener noreferrer">https://doi.org/10.1029/2018JD029668</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2019JGR.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -1183,9 +1186,9 @@
                                     of Guangzhou, China.
                                     <i>Journal of Geophysical Research-Atmospheres</i>, 124, 9391–9406.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1029/2018JD030229">https://doi.org/10.1029/2018JD030229</a>.
+                                        href="https://doi.org/10.1029/2018JD030229" rel="noopener noreferrer">https://doi.org/10.1029/2018JD030229</a>.
                                     <span class="label label-info"> <a target="_blank"
-                                            href="papers/Huang_2019b_JGR.pdf">
+                                            href="papers/Huang_2019b_JGR.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -1195,8 +1198,8 @@
                                     Extreme Rainfall Event in the Coastal Metropolitan City of Guangzhou, China.
                                     <i>Atmospheric Research</i>, 240 (2020) 104939.
                                     <a target="_blank"
-                                        href="https://doi.org/10.1016/j.atmosres.2020.104939">https://doi.org/10.1016/j.atmosres.2020.104939</a>.
-                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2020AR.pdf">
+                                        href="https://doi.org/10.1016/j.atmosres.2020.104939" rel="noopener noreferrer">https://doi.org/10.1016/j.atmosres.2020.104939</a>.
+                                    <span class="label label-info"> <a target="_blank" href="papers/Huang_2020AR.pdf" rel="noopener noreferrer">
                                             Download
                                         </a></span>
                                 </p>
@@ -1218,7 +1221,7 @@
                                     The Sichuan Basin with complex terrain is a key storm-prone region of China. The
                                     anisotropic characteristics of terrain height was revealed
                                     by the two-dimensional discrete cosine transform (<a target="_blank"
-                                        href="http://dx.doi.org/10.11676/qxxb2016.010">Huang and Cui, 2016</a>).
+                                        href="http://dx.doi.org/10.11676/qxxb2016.010" rel="noopener noreferrer">Huang and Cui, 2016</a>).
                                 </li>
 
                                 <p align="justify" style="text-indent:1em"></p>
@@ -1229,9 +1232,9 @@
                                     rainfall events along
                                     the east slope of Tibetan Plateau through single extreme rainfall case and
                                     multi-torrential-rainfall
-                                    case studies (<a target="_blank" href="http://dx.doi.org/10.1002/asl2.562">Huang and
+                                    case studies (<a target="_blank" href="http://dx.doi.org/10.1002/asl2.562" rel="noopener noreferrer">Huang and
                                         Cui, 2015, ASL</a>;
-                                    <a target="_blank" href="http://dx.doi.org/10.1175/JHM-D-14-0220.1">Huang and Cui,
+                                    <a target="_blank" href="http://dx.doi.org/10.1175/JHM-D-14-0220.1" rel="noopener noreferrer">Huang and Cui,
                                         2015, JHM</a>).
                                 </li>
 
@@ -1244,8 +1247,8 @@
                                     &#9313; Abundant water vapor condensing to form cloud water &#8594; accretion of
                                     cloud water by graupel &#8594; graupel melts to increase the amount
                                     of rain water (<a target="_blank"
-                                        href="http://dx.doi.org/10.1007/s00376-014-4066-7">Huang and Cui, 2015, AAS</a>;
-                                    <a target="_blank" href="http://dx.doi.org/10.1080/16742834.2016.1139436">Huang et
+                                        href="http://dx.doi.org/10.1007/s00376-014-4066-7" rel="noopener noreferrer">Huang and Cui, 2015, AAS</a>;
+                                    <a target="_blank" href="http://dx.doi.org/10.1080/16742834.2016.1139436" rel="noopener noreferrer">Huang et
                                         al., 2016</a>).
                                 </li>
 
@@ -1257,16 +1260,16 @@
                                     relative contributions of water-vapor-related processes and
                                     cloud-related processes to rainfall and their related physical processes were
                                     revealed
-                                    (<a target="_blank" href="http://dx.doi.org/10.1016/j.atmosres.2015.09.026">Huang et
+                                    (<a target="_blank" href="http://dx.doi.org/10.1016/j.atmosres.2015.09.026" rel="noopener noreferrer">Huang et
                                         al., 2016</a>;
-                                    <a target="_blank" href="https://doi.org/10.1007/s00376-019-8159-1">Huang et al.,
+                                    <a target="_blank" href="https://doi.org/10.1007/s00376-019-8159-1" rel="noopener noreferrer">Huang et al.,
                                         2019</a>).
                                 </li>
                             </ol>
 
                             <br>
                             <div class="container" align="center" style="width: 100%; height: auto">
-                                <img loading="lazy" src="images/Sichuan/Sichuan_Terrain.png"
+                                <img loading="lazy" src="images/Sichuan/Sichuan_Terrain.png" alt="Terrain map for the Sichuan heavy-rainfall study region"
                                     style="width: 70%; height: 70%">
                             </div>
                             </p>
@@ -1288,7 +1291,7 @@
                             <ul align="justify" class="academic-list">
                                 <li>
                                     One of computer software I developed (<a target="_blank"
-                                        href="http://www.nmc.cn/publish/typhoon/wind.html">TCwind V1.0</a>) has been
+                                        href="http://www.nmc.cn/publish/typhoon/wind.html" rel="noopener noreferrer">TCwind V1.0</a>) has been
                                     operationally
                                     used at National Meteorological Center of CMA, China since March 2016,
                                     which can markedly correct the tropical cyclone wind prediction errors of the model.
@@ -1333,22 +1336,22 @@
                             </span>&nbsp;
                             -->
                         <span class="label label-success">
-                            <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=OUrJeeMAAAAJ">
+                            <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=OUrJeeMAAAAJ" rel="noopener noreferrer">
                                 <font color=white>GoogleScholar</font>
                             </a>
                         </span>&nbsp;
                         <span class="label label-success">
-                            <a target="_blank" href="https://www.researchgate.net/profile/Yongjie_Huang2">
+                            <a target="_blank" href="https://www.researchgate.net/profile/Yongjie_Huang2" rel="noopener noreferrer">
                                 <font color="white">ResearchGate</font>
                             </a>
                         </span>&nbsp;
                         <span class="label label-success">
-                            <a target="_blank" href="https://www.webofscience.com/wos/author/rid/C-3525-2014">
+                            <a target="_blank" href="https://www.webofscience.com/wos/author/rid/C-3525-2014" rel="noopener noreferrer">
                                 <font color="white">ResearcherID</font>
                             </a>
                         </span>&nbsp;
                         <span class="label label-success">
-                            <a target="_blank" href="http://orcid.org/0000-0001-7883-8768">
+                            <a target="_blank" href="http://orcid.org/0000-0001-7883-8768" rel="noopener noreferrer">
                                 <font color="white">ORCID</font>
                             </a>
                         </span>&nbsp;
@@ -1459,12 +1462,12 @@
                             Quasi-Steady State Supersaturation: Do High Values Derived from ESCAPE Represent Real
                             High Supersaturations and the Potential for Condensational Invigoration?
                             <i>Journal of Geophysical Research: Atmospheres</i>, 131, e2025JD045547.
-                            <a target="_blank" href="https://doi.org/10.22541/essoar.176031289.91390863/v1">[Preprint
+                            <a target="_blank" href="https://doi.org/10.22541/essoar.176031289.91390863/v1" rel="noopener noreferrer">[Preprint
                                 Version]</a>.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2025JD045547">https://doi.org/10.1029/2025JD045547</a>.
+                                href="https://doi.org/10.1029/2025JD045547" rel="noopener noreferrer">https://doi.org/10.1029/2025JD045547</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="papers/PatilEtAl_2026JGR.pdf">Download</a></span>
+                                    href="papers/PatilEtAl_2026JGR.pdf" rel="noopener noreferrer">Download</a></span>
                         </li>
 
                         <li style="margin-bottom:10px">
@@ -1472,8 +1475,8 @@
                             Landward acceleration of tropical cyclones making landfall along the South China coast.
                             <i>Geophysical Research Letters</i>, 53, e2025GL119733.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2025GL119733">https://doi.org/10.1029/2025GL119733</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/ZhongEtAl_2026GRL.pdf">
+                                href="https://doi.org/10.1029/2025GL119733" rel="noopener noreferrer">https://doi.org/10.1029/2025GL119733</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/ZhongEtAl_2026GRL.pdf" rel="noopener noreferrer">
                                     Download</a></span>
                         </li>
 
@@ -1489,8 +1492,8 @@
                             Learning and Parcel Models.
                             <i>Journal of the Atmospheric Sciences</i>, 82, 2291–2312.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JAS-D-24-0269.1">https://doi.org/10.1175/JAS-D-24-0269.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2025JAS.pdf">
+                                href="https://doi.org/10.1175/JAS-D-24-0269.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-24-0269.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2025JAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1501,11 +1504,11 @@
                             generated by O-CNOPs.
                             <i>Science China Earth Sciences</i>, 68.
                             <a target="_blank"
-                                href="https://doi.org/10.1007/s11430-025-1668-1">https://doi.org/10.1007/s11430-025-1668-1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/ZhangEtAl_2025SCES_EN.pdf">
+                                href="https://doi.org/10.1007/s11430-025-1668-1" rel="noopener noreferrer">https://doi.org/10.1007/s11430-025-1668-1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/ZhangEtAl_2025SCES_EN.pdf" rel="noopener noreferrer">
                                     Download (English)
                                 </a></span>
-                            <span class="label label-info"> <a target="_blank" href="papers/ZhangEtAl_2025SCES_CN.pdf">
+                            <span class="label label-info"> <a target="_blank" href="papers/ZhangEtAl_2025SCES_CN.pdf" rel="noopener noreferrer">
                                     Download (Chinese)
                                 </a></span>
                         </li>
@@ -1516,8 +1519,8 @@
                             Texas.
                             <i>Bulletin of the American Meteorological Society</i>, in press.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/BAMS-D-23-0331.1">https://doi.org/10.1175/BAMS-D-23-0331.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/JensenEtAl_2025BAMS.pdf">
+                                href="https://doi.org/10.1175/BAMS-D-23-0331.1" rel="noopener noreferrer">https://doi.org/10.1175/BAMS-D-23-0331.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/JensenEtAl_2025BAMS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1529,8 +1532,8 @@
                             Exacerbates Air Pollution over Arequipa, Peru.
                             <i>Journal of Geophysical Research: Atmospheres</i>, 130, e2024JD042905.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2024JD042905">https://doi.org/10.1029/2024JD042905</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAL_2025JGR.pdf">
+                                href="https://doi.org/10.1029/2024JD042905" rel="noopener noreferrer">https://doi.org/10.1029/2024JD042905</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAL_2025JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1543,9 +1546,9 @@
                             Different Phases of ENSO.
                             <i>Atmospheric Research</i>, 316, 107936.
                             <a target="_blank"
-                                href="https://doi.org/10.1016/j.atmosres.2025.107936">https://doi.org/10.1016/j.atmosres.2025.107936</a>.
-                            <a target="_blank" href="http://doi.org/10.2139/ssrn.4975169">[Preprint Version]</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/LiuEtAl_2025AR.pdf">
+                                href="https://doi.org/10.1016/j.atmosres.2025.107936" rel="noopener noreferrer">https://doi.org/10.1016/j.atmosres.2025.107936</a>.
+                            <a target="_blank" href="http://doi.org/10.2139/ssrn.4975169" rel="noopener noreferrer">[Preprint Version]</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/LiuEtAl_2025AR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1555,8 +1558,8 @@
                             Experiment of Sea Breeze Convection, Aerosols, Precipitation and Environment (ESCAPE).
                             <i>Bulletin of the American Meteorological Society</i>, 106, E310–E332.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/BAMS-D-23-0014.1">https://doi.org/10.1175/BAMS-D-23-0014.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/KolliasEtAl_2025BAMS.pdf">
+                                href="https://doi.org/10.1175/BAMS-D-23-0014.1" rel="noopener noreferrer">https://doi.org/10.1175/BAMS-D-23-0014.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/KolliasEtAl_2025BAMS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1567,8 +1570,8 @@
                             sea-breeze convection supporting a ground-based and airborne field campaign.
                             <i>Bulletin of the American Meteorological Society</i>, 106, E456–E472.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/BAMS-D-23-0015.1">https://doi.org/10.1175/BAMS-D-23-0015.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/DzamboEtAl_2025BAMS.pdf">
+                                href="https://doi.org/10.1175/BAMS-D-23-0015.1" rel="noopener noreferrer">https://doi.org/10.1175/BAMS-D-23-0015.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/DzamboEtAl_2025BAMS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1580,8 +1583,8 @@
                             Utilizing Hyperresolution RCM and CREST-VEC Model Simulations Under SSP5-8.5.
                             <i>American Journal of Water Resources</i>, 13, 51–62.
                             <a target="_blank"
-                                href="https://doi.org/10.12691/ajwr-13-2-3">https://doi.org/10.12691/ajwr-13-2-3</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2025AJWR.pdf">
+                                href="https://doi.org/10.12691/ajwr-13-2-3" rel="noopener noreferrer">https://doi.org/10.12691/ajwr-13-2-3</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2025AJWR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1597,10 +1600,10 @@
                             Andes in Multi 5-Year Convection-Permitting Simulations.
                             <i>Journal of Geophysical Research: Atmospheres</i>, 129, e2023JD040394.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2023JD040394">https://doi.org/10.1029/2023JD040394</a>.
-                            <a target="_blank" href="https://doi.org/10.22541/essoar.170000370.07634797/v1">[Preprint
+                                href="https://doi.org/10.1029/2023JD040394" rel="noopener noreferrer">https://doi.org/10.1029/2023JD040394</a>.
+                            <a target="_blank" href="https://doi.org/10.22541/essoar.170000370.07634797/v1" rel="noopener noreferrer">[Preprint
                                 Version]</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2024JGR.pdf">
+                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2024JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1612,8 +1615,8 @@
                             Central Andes: Projections from convection-permitting regional climate simulations.
                             <i>Quarterly Journal of the Royal Meteorological Society</i>, 1–20.
                             <a target="_blank"
-                                href="https://doi.org/10.1002/qj.4820">https://doi.org/10.1002/qj.4820</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2024QJ.pdf">
+                                href="https://doi.org/10.1002/qj.4820" rel="noopener noreferrer">https://doi.org/10.1002/qj.4820</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2024QJ.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1627,8 +1630,8 @@
                             Modeling.
                             <i>Bulletin of the American Meteorological Society</i>, 105, E32–E44.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/BAMS-D-22-0226.1">https://doi.org/10.1175/BAMS-D-22-0226.1</a>
-                            <span class="label label-info"> <a target="_blank" href="papers/DominguezEtAl_2024BAMS.pdf">
+                                href="https://doi.org/10.1175/BAMS-D-22-0226.1" rel="noopener noreferrer">https://doi.org/10.1175/BAMS-D-22-0226.1</a>
+                            <span class="label label-info"> <a target="_blank" href="papers/DominguezEtAl_2024BAMS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1641,8 +1644,8 @@
                             Sensitivity to Planetary Boundary Layer Parameterization.
                             <i>Journal of Hydrometeorology</i>, 24, 1969–1990.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JHM-D-22-0173.1">https://doi.org/10.1175/JHM-D-22-0173.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2023JHM.pdf">
+                                href="https://doi.org/10.1175/JHM-D-22-0173.1" rel="noopener noreferrer">https://doi.org/10.1175/JHM-D-22-0173.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuangEtAl_2023JHM.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1653,8 +1656,8 @@
                             Microphysics?
                             <i>Quarterly Journal of the Royal Meteorological Society</i>, 1–30.
                             <a target="_blank"
-                                href="https://doi.org/10.1002/QJ.4553">https://doi.org/10.1002/QJ.4553</a>.
-                            <span class="label label-info"> <a target="_blank" href="./papers/LiEtAl_2023QJ.pdf">
+                                href="https://doi.org/10.1002/QJ.4553" rel="noopener noreferrer">https://doi.org/10.1002/QJ.4553</a>.
+                            <span class="label label-info"> <a target="_blank" href="./papers/LiEtAl_2023QJ.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1666,8 +1669,8 @@
                             Amazon during the wet season.
                             <i>Journal of Geophysical Research-Atmospheres</i>, 128, e2023JD038553.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2023JD038553">https://doi.org/10.1029/2023JD038553</a>.
-                            <span class="label label-info"> <a target="_blank" href="./papers/HuEtAl_2023JGR.pdf">
+                                href="https://doi.org/10.1029/2023JD038553" rel="noopener noreferrer">https://doi.org/10.1029/2023JD038553</a>.
+                            <span class="label label-info"> <a target="_blank" href="./papers/HuEtAl_2023JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1679,11 +1682,11 @@
                             for precipitation in Henan Province of North China: mean state and an extreme event.
                             <i>Journal of Climate</i>, 36(11), 3611–3623.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JCLI-D-22-0582.1">https://doi.org/10.1175/JCLI-D-22-0582.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2023JCl.pdf">
+                                href="https://doi.org/10.1175/JCLI-D-22-0582.1" rel="noopener noreferrer">https://doi.org/10.1175/JCLI-D-22-0582.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2023JCl.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
-                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2023JCl.s1.pdf">
+                            <span class="label label-info"> <a target="_blank" href="papers/ChenEtAl_2023JCl.s1.pdf" rel="noopener noreferrer">
                                     Supplementary Materials
                                 </a></span>
                         </li>
@@ -1694,9 +1697,9 @@
                             Evaluation with Convective and Stratiform Cases.
                             <i>Journal of Geophysical Research-Atmospheres</i>, 128, e2022JD037685.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2022JD037685">https://doi.org/10.1029/2022JD037685</a>.
+                                href="https://doi.org/10.1029/2022JD037685" rel="noopener noreferrer">https://doi.org/10.1029/2022JD037685</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://onlinelibrary.wiley.com/share/author/CZXS4FGTFASTBKHYRG3K?target=10.1029/2022JD037685">
+                                    href="https://onlinelibrary.wiley.com/share/author/CZXS4FGTFASTBKHYRG3K?target=10.1029/2022JD037685" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1707,9 +1710,9 @@
                             of the intensification of Hurricane Patricia (2015).
                             <i>Journal of Geophysical Research-Atmospheres</i>, 128, e2022JD037082.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2022JD037082">https://doi.org/10.1029/2022JD037082</a>.
+                                href="https://doi.org/10.1029/2022JD037082" rel="noopener noreferrer">https://doi.org/10.1029/2022JD037082</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://onlinelibrary.wiley.com/share/author/NE7KYFTBSJJQ4GTNKTZ8?target=10.1029/2022JD037082">
+                                    href="https://onlinelibrary.wiley.com/share/author/NE7KYFTBSJJQ4GTNKTZ8?target=10.1029/2022JD037082" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1726,13 +1729,13 @@
                             An observing system simulation experiment study.
                             <i>Monthly Weather Review</i>, 150, 1563–1583.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/MWR-D-21-0199.1">https://doi.org/10.1175/MWR-D-21-0199.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2022MWR.pdf">
+                                href="https://doi.org/10.1175/MWR-D-21-0199.1" rel="noopener noreferrer">https://doi.org/10.1175/MWR-D-21-0199.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2022MWR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                             <br>
                             (<a target="_blank"
-                                href="https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382713">Oral
+                                href="https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382713" rel="noopener noreferrer">Oral
                                 presentation</a> at
                             <i>101<sup>st</sup> American Meteorological Society (AMS) annual meeting</i>, online, 2021)
                         </li>
@@ -1745,9 +1748,9 @@
                             during the HAIC-HIWC field campaign: dominant role of secondary ice production.
                             <i>Atmospheric Chemistry and Physics</i>, 22, 2365–2384.
                             <a target="_blank"
-                                href="https://doi.org/10.5194/acp-22-2365-2022">https://doi.org/10.5194/acp-22-2365-2022</a>.
+                                href="https://doi.org/10.5194/acp-22-2365-2022" rel="noopener noreferrer">https://doi.org/10.5194/acp-22-2365-2022</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://acp.copernicus.org/articles/22/2365/2022/acp-22-2365-2022.pdf">
+                                    href="https://acp.copernicus.org/articles/22/2365/2022/acp-22-2365-2022.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1758,9 +1761,9 @@
                             The impacts of secondary ice production on microphysics and dynamics in tropical convection.
                             <i>Atmospheric Chemistry and Physics</i>, 22, 12287–12310.
                             <a target="_blank"
-                                href="https://doi.org/10.5194/acp-22-12287-2022">https://doi.org/10.5194/acp-22-12287-2022</a>.
+                                href="https://doi.org/10.5194/acp-22-12287-2022" rel="noopener noreferrer">https://doi.org/10.5194/acp-22-12287-2022</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://acp.copernicus.org/articles/22/12287/2022/acp-22-12287-2022.pdf">
+                                    href="https://acp.copernicus.org/articles/22/12287/2022/acp-22-12287-2022.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1773,8 +1776,8 @@
                             Environmental Conditions: Results from the HAIC-HIWC Cayenne Campaign.
                             <i>Journal of the Atmospheric Sciences</i>, 79, 3103–3134.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JAS-D-22-0008.1">https://doi.org/10.1175/JAS-D-22-0008.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2022JAS.pdf">
+                                href="https://doi.org/10.1175/JAS-D-22-0008.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-22-0008.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2022JAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1786,8 +1789,8 @@
                             forecast using a hydrometeorological modelling system.
                             <i>Hydrological Processes</i>, 36, e14710.
                             <a target="_blank"
-                                href="https://doi.org/10.1002/hyp.14710">https://doi.org/10.1002/hyp.14710</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/YinEtAl_2022HP.pdf">
+                                href="https://doi.org/10.1002/hyp.14710" rel="noopener noreferrer">https://doi.org/10.1002/hyp.14710</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/YinEtAl_2022HP.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1799,9 +1802,9 @@
                             over a South American Region across the Pacific Coast and Andes.
                             <i>Atmosphere</i>, 13, 1666.
                             <a target="_blank"
-                                href="https://doi.org/10.3390/atmos13101666">https://doi.org/10.3390/atmos13101666</a>.
+                                href="https://doi.org/10.3390/atmos13101666" rel="noopener noreferrer">https://doi.org/10.3390/atmos13101666</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://www.mdpi.com/2073-4433/13/10/1666/pdf?version=1665648987">
+                                    href="https://www.mdpi.com/2073-4433/13/10/1666/pdf?version=1665648987" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1821,9 +1824,9 @@
                             Evaluation of Simulations Using Bulk Microphysical Schemes.
                             <i>Atmospheric Chemistry and Physics</i>, 21, 6919–6944.
                             <a target="_blank"
-                                href="https://doi.org/10.5194/acp-21-6919-2021">https://doi.org/10.5194/acp-21-6919-2021</a>.
+                                href="https://doi.org/10.5194/acp-21-6919-2021" rel="noopener noreferrer">https://doi.org/10.5194/acp-21-6919-2021</a>.
                             <span class="label label-info"> <a target="_blank"
-                                    href="https://acp.copernicus.org/articles/21/6919/2021/acp-21-6919-2021.pdf">
+                                    href="https://acp.copernicus.org/articles/21/6919/2021/acp-21-6919-2021.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1834,8 +1837,8 @@
                             over the coastal region of South China.
                             <i>Journal of Geophysical Research: Atmospheres</i>, 126, e2021JD035556.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2021JD035556">https://doi.org/10.1029/2021JD035556</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/LiEtAl_2021JGR.pdf">
+                                href="https://doi.org/10.1029/2021JD035556" rel="noopener noreferrer">https://doi.org/10.1029/2021JD035556</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/LiEtAl_2021JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1847,8 +1850,8 @@
                             HAIC-HIWC Cayenne Field Campaign.
                             <i>Journal of the Atmospheric Sciences</i>, 78, 2957–2981.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JAS-D-21-0015.1">https://doi.org/10.1175/JAS-D-21-0015.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2021JAS.pdf">
+                                href="https://doi.org/10.1175/JAS-D-21-0015.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-21-0015.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/HuEtAl_2021JAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1859,8 +1862,8 @@
                             Florence in 2018.
                             <i>Journal of Hydrology</i>, 603, 127139.
                             <a target="_blank"
-                                href="https://doi.org/10.1016/j.jhydrol.2021.127139">https://doi.org/10.1016/j.jhydrol.2021.127139</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/YinEtAl_2021JH.pdf">
+                                href="https://doi.org/10.1016/j.jhydrol.2021.127139" rel="noopener noreferrer">https://doi.org/10.1016/j.jhydrol.2021.127139</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/YinEtAl_2021JH.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1876,13 +1879,13 @@
                             An observing system simulation experiment study.
                             <i>Monthly Weather Review</i>, 148 (9), 3825–3845.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/MWR-D-19-0391.1">https://doi.org/10.1175/MWR-D-19-0391.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2020MWR.pdf">
+                                href="https://doi.org/10.1175/MWR-D-19-0391.1" rel="noopener noreferrer">https://doi.org/10.1175/MWR-D-19-0391.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2020MWR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                             <br>
                             (<a target="_blank"
-                                href="https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/366300">Oral
+                                href="https://ams.confex.com/ams/2020Annual/meetingapp.cgi/Paper/366300" rel="noopener noreferrer">Oral
                                 presentation</a> at
                             <i>100<sup>th</sup> American Meteorological Society (AMS) annual meeting</i>, Boston, 2020)
                         </li>
@@ -1893,8 +1896,8 @@
                             Rainfall Event in the Coastal Metropolitan City of Guangzhou, China.
                             <i>Atmospheric Research</i>, 240 (2020) 104939.
                             <a target="_blank"
-                                href="https://doi.org/10.1016/j.atmosres.2020.104939">https://doi.org/10.1016/j.atmosres.2020.104939</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2020AR.pdf">
+                                href="https://doi.org/10.1016/j.atmosres.2020.104939" rel="noopener noreferrer">https://doi.org/10.1016/j.atmosres.2020.104939</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2020AR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1909,8 +1912,8 @@
                             Guangzhou, China.
                             <i>Journal of Geophysical Research-Atmospheres</i>, 124, 9391–9406.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2018JD030229">https://doi.org/10.1029/2018JD030229</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019b_JGR.pdf">
+                                href="https://doi.org/10.1029/2018JD030229" rel="noopener noreferrer">https://doi.org/10.1029/2018JD030229</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019b_JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1921,8 +1924,8 @@
                             China: observation analysis and nested very-large-eddy simulation with the WRF Model.
                             <i>Journal of Geophysical Research-Atmospheres</i>, 124, 1370–1391.
                             <a target="_blank"
-                                href="https://doi.org/10.1029/2018JD029668">https://doi.org/10.1029/2018JD029668</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019JGR.pdf">
+                                href="https://doi.org/10.1029/2018JD029668" rel="noopener noreferrer">https://doi.org/10.1029/2018JD029668</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019JGR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1933,8 +1936,8 @@
                             Rainfall Event.
                             <i>Advances in Atmospheric Sciences</i>, 36, 495–509.
                             <a target="_blank"
-                                href="https://doi.org/10.1007/s00376-019-8159-1">https://doi.org/10.1007/s00376-019-8159-1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019AAS.pdf">
+                                href="https://doi.org/10.1007/s00376-019-8159-1" rel="noopener noreferrer">https://doi.org/10.1007/s00376-019-8159-1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2019AAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1945,8 +1948,8 @@
                             formation.
                             <i>Journal of the Atmospheric Sciences</i>, 76, 707–727.
                             <a target="_blank"
-                                href="https://doi.org/10.1175/JAS-D-18-0219.1">https://doi.org/10.1175/JAS-D-18-0219.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2019JAS.pdf">
+                                href="https://doi.org/10.1175/JAS-D-18-0219.1" rel="noopener noreferrer">https://doi.org/10.1175/JAS-D-18-0219.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2019JAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1956,8 +1959,8 @@
                             Surface rainfall processes during the genesis period of tropical cyclone Durian (2001).
                             <i>Advances in Atmospheric Sciences</i>, 36(4), 451-464.
                             <a target="_blank"
-                                href="https://doi.org/10.1007/s00376-018-8157-8">https://doi.org/10.1007/s00376-018-8157-8</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2019AAS.pdf">
+                                href="https://doi.org/10.1007/s00376-018-8157-8" rel="noopener noreferrer">https://doi.org/10.1007/s00376-018-8157-8</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2019AAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1973,8 +1976,8 @@
                             Guangdong, China.
                             <i>Atmospheric Research</i>, 209, 131-143.
                             <a target="_blank"
-                                href="https://doi.org/10.1016/j.atmosres.2018.03.010">https://doi.org/10.1016/j.atmosres.2018.03.010</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2018AR.pdf">
+                                href="https://doi.org/10.1016/j.atmosres.2018.03.010" rel="noopener noreferrer">https://doi.org/10.1016/j.atmosres.2018.03.010</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2018AR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -1985,8 +1988,8 @@
                             Durian (2001).
                             <i>Advances in Atmospheric Sciences</i>, 35(12), 1505-1521.
                             <a target="_blank"
-                                href="https://doi.org/10.1007/s00376-018-8039-0">https://doi.org/10.1007/s00376-018-8039-0</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2018AAS.pdf">
+                                href="https://doi.org/10.1007/s00376-018-8039-0" rel="noopener noreferrer">https://doi.org/10.1007/s00376-018-8039-0</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2018AAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2002,8 +2005,8 @@
                             for mesoscale model.
                             <i>Acta Meteorologica Sinica</i>, 74(1), 114-126. (in Chinese with English Abstract)
                             <a target="_blank"
-                                href="http://dx.doi.org/10.11676/qxxb2016.010">http://dx.doi.org/10.11676/qxxb2016.010</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AMS_Chinese.pdf">
+                                href="http://dx.doi.org/10.11676/qxxb2016.010" rel="noopener noreferrer">http://dx.doi.org/10.11676/qxxb2016.010</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AMS_Chinese.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2014,8 +2017,8 @@
                             in Sichuan, China.
                             <i>Atmospheric and Oceanic Science Letters</i>, 9(2), 90-98.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1080/16742834.2016.1139436">http://dx.doi.org/10.1080/16742834.2016.1139436</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AOSL.pdf">
+                                href="http://dx.doi.org/10.1080/16742834.2016.1139436" rel="noopener noreferrer">http://dx.doi.org/10.1080/16742834.2016.1139436</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AOSL.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2026,8 +2029,8 @@
                             roles of surface evaporation in a torrential rainfall event.
                             <i>Atmospheric Research</i>, 169, 54-64.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1016/j.atmosres.2015.09.026">http://dx.doi.org/10.1016/j.atmosres.2015.09.026</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AR.pdf">
+                                href="http://dx.doi.org/10.1016/j.atmosres.2015.09.026" rel="noopener noreferrer">http://dx.doi.org/10.1016/j.atmosres.2015.09.026</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2016AR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2037,12 +2040,12 @@
                             Characteristics of Multiscale Vortices in the Formation of Simulated Typhoon Durian (2001).
                             <i>Atmospheric Science Letters</i>, 17, 492-500.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1002/asl.683">http://dx.doi.org/10.1002/asl.683</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2016ASL.pdf">
+                                href="http://dx.doi.org/10.1002/asl.683" rel="noopener noreferrer">http://dx.doi.org/10.1002/asl.683</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2016ASL.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                             <span class="label label-info"> <a target="_blank"
-                                    href="papers/Wang_2016ASL_CORRIGENDUM.pdf">
+                                    href="papers/Wang_2016ASL_CORRIGENDUM.pdf" rel="noopener noreferrer">
                                     CORRIGENDUM
                                 </a></span>
                         </li>
@@ -2053,8 +2056,8 @@
                             South China Sea
                             <i>Monthly Weather Review</i>, 144, 2831-2854.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1175/MWR-D-15-0042.1">http://dx.doi.org/10.1175/MWR-D-15-0042.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2016MWR.pdf">
+                                href="http://dx.doi.org/10.1175/MWR-D-15-0042.1" rel="noopener noreferrer">http://dx.doi.org/10.1175/MWR-D-15-0042.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Wang_2016MWR.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2070,8 +2073,8 @@
                             of 2009-13.
                             <i>Journal of Hydrometeorology</i>, 16, 1906-1917.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1175/JHM-D-14-0220.1">http://dx.doi.org/10.1175/JHM-D-14-0220.1</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015JHM.pdf">
+                                href="http://dx.doi.org/10.1175/JHM-D-14-0220.1" rel="noopener noreferrer">http://dx.doi.org/10.1175/JHM-D-14-0220.1</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015JHM.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2082,8 +2085,8 @@
                             Lagrangian method.
                             <i>Atmospheric Science Letters</i>, 16, 177-183.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1002/asl2.562">http://dx.doi.org/10.1002/asl2.562</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015ASL.pdf">
+                                href="http://dx.doi.org/10.1002/asl2.562" rel="noopener noreferrer">http://dx.doi.org/10.1002/asl2.562</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015ASL.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2093,8 +2096,8 @@
                             Dominant cloud microphysical processes of a torrential rainfall event in Sichuan, China.
                             <i>Advances in Atmospheric Sciences</i>, 32, 389-400.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.1007/s00376-014-4066-7">http://dx.doi.org/10.1007/s00376-014-4066-7</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015AAS.pdf">
+                                href="http://dx.doi.org/10.1007/s00376-014-4066-7" rel="noopener noreferrer">http://dx.doi.org/10.1007/s00376-014-4066-7</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Huang_2015AAS.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2104,8 +2107,8 @@
                             Cause analysis of sudden track change of Typhoon Megi (1013).
                             <i>Transactions of Atmospheric Sciences</i>, 38, 658-669. (in Chinese with English Abstract)
                             <a target="_blank"
-                                href="http://dx.doi.org/10.13878/j.cnki.dqkxxb.20130301001">http://dx.doi.org/10.13878/j.cnki.dqkxxb.20130301001</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Xu_2015TAS_Chinese.pdf">
+                                href="http://dx.doi.org/10.13878/j.cnki.dqkxxb.20130301001" rel="noopener noreferrer">http://dx.doi.org/10.13878/j.cnki.dqkxxb.20130301001</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Xu_2015TAS_Chinese.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2117,8 +2120,8 @@
                             physics-dynamics coupling and 3-D extension.
                             <i>Geoscientific Model Development</i>, 8, 2675-2686.
                             <a target="_blank"
-                                href="http://dx.doi.org/10.5194/gmd-8-2675-2015">http://dx.doi.org/10.5194/gmd-8-2675-2015</a>.
-                            <span class="label label-info"> <a target="_blank" href="papers/Dong_2015GMD.pdf">
+                                href="http://dx.doi.org/10.5194/gmd-8-2675-2015" rel="noopener noreferrer">http://dx.doi.org/10.5194/gmd-8-2675-2015</a>.
+                            <span class="label label-info"> <a target="_blank" href="papers/Dong_2015GMD.pdf" rel="noopener noreferrer">
                                     Download
                                 </a></span>
                         </li>
@@ -2158,7 +2161,7 @@
 
                         <li>
                             <span class="label label-default">2025</span>
-                            <a target="_blank" href="images/JMR_Reviewer_Award_2025-032-Yongjie_HUANG.png">
+                            <a target="_blank" href="images/JMR_Reviewer_Award_2025-032-Yongjie_HUANG.png" rel="noopener noreferrer">
                                 Reviewer Award for <i>Journal of Meteorological Research</i>
                             </a>
                         </li>
@@ -2170,7 +2173,7 @@
 
                         <li>
                             <span class="label label-default">2024</span>
-                            <a target="_blank" href="images/AAS_Editors_Adward_for_Reviewers-2024-Yongjie_Huang.pdf">
+                            <a target="_blank" href="images/AAS_Editors_Adward_for_Reviewers-2024-Yongjie_Huang.pdf" rel="noopener noreferrer">
                                 Editor's Award for <i>Advances in Atmospheric Sciences</i>
                             </a>
                         </li>
@@ -2178,7 +2181,7 @@
                         <li>
                             <span class="label label-default">2018</span>
                             <a target="_blank"
-                                href="images/Outstanding_Reviewer_Awards_for_Atmospheric_Research_Certificate.pdf">
+                                href="images/Outstanding_Reviewer_Awards_for_Atmospheric_Research_Certificate.pdf" rel="noopener noreferrer">
                                 Outstanding Reviewer Awards for <i>Atmospheric Research</i>
                             </a>
                         </li>
@@ -2384,13 +2387,13 @@
                         <li>
                             <!-- <span class="label label-danger">New</span> -->
                             <!-- <span class="flash-text"><b>[OPEN]</b></span> -->
-                            <a target="_blank" href="docs/Open_Student_CAPE-K_2025.pdf">
+                            <a target="_blank" href="docs/Open_Student_CAPE-K_2025.pdf" rel="noopener noreferrer">
                                 <font color="black"><s>[CLOSE] Fully-Funded Graduate Student in Cloud Observations and
                                         Modeling Starting in Summer/Fall 2025!</s></font>
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="docs/PhD_Student_Position_OU_Clouds.pdf">
+                            <a target="_blank" href="docs/PhD_Student_Position_OU_Clouds.pdf" rel="noopener noreferrer">
                                 <font color="black"><s>[CLOSE] Open Ph.D. Student Position in Cloud Observations and
                                         Modeling Starting in Spring 2024!</s></font>
                             </a>
@@ -2401,10 +2404,10 @@
                     <ul class="academic-list">
                         <li>Erika E. Pruitt (2025–), High-latitude Clouds (CAPE-k Observations)</li>
                         <li><a target="_blank"
-                                href="https://scholar.google.com/citations?hl=en&user=RfGSNnoAAAAJ">Zeqian (Hazel)
+                                href="https://scholar.google.com/citations?hl=en&user=RfGSNnoAAAAJ" rel="noopener noreferrer">Zeqian (Hazel)
                                 Xia</a> (2025–), High-latitude Clouds (Observations & Modeling)</li>
                         <li><a target="_blank"
-                                href="https://scholar.google.com/citations?user=pgGO17QAAAAJ&hl=en">Dhwanit J. Mise</a>
+                                href="https://scholar.google.com/citations?user=pgGO17QAAAAJ&hl=en" rel="noopener noreferrer">Dhwanit J. Mise</a>
                             (2024–), Convective Clouds (TRACER Observations & Modeling)</li>
                     </ul>
 
@@ -2434,7 +2437,7 @@
         <div class="container lead">
             <div style="text-align: left; margin-top:10px" class="col-md-12">
 
-                <b class="noshow" style="display:none;" id="tab-7">
+                <b class="noshow" style="display:none;" id="service-mobile-toggle">
                     <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;"
                         onclick="javascript:$('#tab-service-content').toggle();">Service
                         <span class="glyphicon glyphicon-chevron-down"></span>
@@ -2450,11 +2453,11 @@
                         <li><span class="label label-default">2026-</span>
                             Member of <a
                                 href="https://www.ametsoc.org/stac/committees/committee-on-mesoscale-processes/membership/"
-                                target="_blank"><i>AMS Committee on Mesoscale Processes</i></a>
+                                target="_blank" rel="noopener noreferrer"><i>AMS Committee on Mesoscale Processes</i></a>
                         </li>
                         <li><span class="label label-default">2026-</span>
                             Member of <a href="https://connect.agu.org/hydrology/about/tc-committees/pretech"
-                                target="_blank"><i>AGU Precipitation Technical Committee</i></a>
+                                target="_blank" rel="noopener noreferrer"><i>AGU Precipitation Technical Committee</i></a>
                         </li>
                     </ul>
 
@@ -2463,13 +2466,13 @@
                         <li><span class="label label-default">2022-</span>
                             Associate Editor at <a
                                 href="https://www.ametsoc.org/ams/publications/journals/monthly-weather-review/"
-                                target="_blank"> <i>Monthly Weather Review</i></a>
+                                target="_blank" rel="noopener noreferrer"> <i>Monthly Weather Review</i></a>
                         </li>
                         <li><span class="label label-default">2021-2023</span>
                             Guest Editor at <i>Remote Sensing</i><br>
                             Special Issue <a
                                 href="https://www.mdpi.com/journal/remotesensing/special_issues/weather_analysis"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 "Remote Sensing for the Improvement of High-Impact Weather Analyses and Forecasts"</a>
                         </li>
                     </ul>
@@ -2478,7 +2481,7 @@
                     <ul class="academic-list">
                         <li>Serve as Reviewer for more than 25 peer-reviewed journals:
                             <span class="label label-info">
-                                <a target="_blank" href="https://www.webofscience.com/wos/author/rid/C-3525-2014">
+                                <a target="_blank" href="https://www.webofscience.com/wos/author/rid/C-3525-2014" rel="noopener noreferrer">
                                     Verified reviews
                                 </a>
                             </span>
@@ -2494,18 +2497,18 @@
                     <p><span class="label label-success">Membership</span></p>
                     <ul class="academic-list">
                         <li>
-                            <a href="https://www.agu.org" target="_blank">American Geophysical Union (AGU)</a> </br>
+                            <a href="https://www.agu.org" target="_blank" rel="noopener noreferrer">American Geophysical Union (AGU)</a> </br>
                         </li>
                         <li>
-                            <a href="https://www.ametsoc.org" target="_blank">American Meteorological Society (AMS)</a>
+                            <a href="https://www.ametsoc.org" target="_blank" rel="noopener noreferrer">American Meteorological Society (AMS)</a>
                             </br>
                         </li>
                         <li>
-                            <a href="http://www.coaaweb.org" target="_blank">Chinese-American Oceanic and Atmospheric
+                            <a href="http://www.coaaweb.org" target="_blank" rel="noopener noreferrer">Chinese-American Oceanic and Atmospheric
                                 Association (COAA)</a> </br>
                         </li>
                         <li>
-                            <a href="http://www.cms1924.org" target="_blank">Chinese Meteorological Society (CMS)</a>
+                            <a href="http://www.cms1924.org" target="_blank" rel="noopener noreferrer">Chinese Meteorological Society (CMS)</a>
                             </br>
                         </li>
                     </ul>
@@ -2650,9 +2653,9 @@
             <center>
                 © 2019-2026 | Yongjie Huang. Credits: AR template
                 <a onclick="javascript:$('#credit').toggle();"><img loading="lazy" border="0"
-                        src="images/ccby.png" /></a>
+                        src="images/ccby.png" alt="Creative Commons Attribution 4.0 license" /></a>
                 <div style="display:none;" id="credit">[AR template available under Creative Commons CC BY 4.0 licence:
-                    <a href="https://github.com/dmsl/academic-responsive-template" target="_blank">
+                    <a href="https://github.com/dmsl/academic-responsive-template" target="_blank" rel="noopener noreferrer">
                         https://github.com/dmsl/academic-responsive-template
                     </a> ]
                 </div>

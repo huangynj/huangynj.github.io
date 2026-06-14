@@ -102,6 +102,35 @@ jQuery(document).ready(function($) {
 ga('create', 'UA-70658068-1', 'auto');
 ga('send', 'pageview');
 
+// Add reverse-tabnabbing protection to static and third-party injected links.
+(function() {
+    function protectBlankLinks() {
+        $('a[target="_blank"]').each(function() {
+            var rel = ($(this).attr('rel') || '').split(/\s+/).filter(Boolean);
+            if (rel.indexOf('noopener') === -1) rel.push('noopener');
+            if (rel.indexOf('noreferrer') === -1) rel.push('noreferrer');
+            $(this).attr('rel', rel.join(' '));
+        });
+    }
+
+    $(document).ready(function() {
+        var pending = false;
+
+        protectBlankLinks();
+
+        if (!window.MutationObserver) return;
+
+        new MutationObserver(function() {
+            if (pending) return;
+            pending = true;
+            setTimeout(function() {
+                pending = false;
+                protectBlankLinks();
+            }, 0);
+        }).observe(document.body, { childList: true, subtree: true });
+    });
+})();
+
 // ==========================================================================
 // LIVE PUBLICATION FILTER
 // ==========================================================================
