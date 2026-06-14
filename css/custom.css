@@ -467,3 +467,16 @@ ol li ol li {
 		text-decoration: underline;
 	}
 }
+
+/* ==========================================================================
+   COPY CITATION BUTTON
+   ========================================================================== */
+.copy-citation-btn {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-citation-btn:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    filter: brightness(0.9);
+}

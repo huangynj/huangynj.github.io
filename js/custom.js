@@ -121,3 +121,58 @@ $(document).ready(function() {
         }
     });
 });
+
+// ==========================================================================
+// 1-CLICK COPY CITATION
+// ==========================================================================
+$(document).ready(function() {
+    // Select only list items in the publications section
+    $('#publications .academic-list li').each(function() {
+        // Skip if this is just a label or empty
+        var text = $(this).text().trim();
+        if (text.length < 20 || ($(this).find('.label-success').length > 0 && text.indexOf('Under Review') > -1 && text.length < 30)) {
+            return;
+        }
+
+        // Create the button using consistent webpage styling (Bootstrap label-info)
+        var copyBtn = $('<span class="label label-info copy-citation-btn" style="cursor:pointer; margin-left:10px;" title="Copy Citation"><i class="fa fa-clipboard"></i> Copy</span>');
+        
+        // Add click event
+        copyBtn.click(function(e) {
+            e.stopPropagation();
+            
+            // Get the parent li text
+            var parentLi = $(this).parent();
+            
+            // Clone it to manipulate text without affecting DOM
+            var clone = parentLi.clone();
+            
+            // Remove the copy button itself from the clone
+            clone.find('.copy-citation-btn').remove();
+            
+            // Remove download links, DOI links if they have visual buttons, etc.
+            clone.find('.label-info').remove();
+            clone.find('.label-success').remove();
+            
+            // Get clean text, remove extra whitespace/newlines
+            var cleanText = clone.text().replace(/\s+/g, ' ').trim();
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(cleanText).then(function() {
+                // Success - change icon temporarily
+                copyBtn.html('<i class="fa fa-check"></i> Copied!');
+                copyBtn.css({'background-color': 'var(--primary)', 'color': 'white'});
+                
+                setTimeout(function() {
+                    copyBtn.html('<i class="fa fa-clipboard"></i> Copy');
+                    copyBtn.css({'background-color': '', 'color': ''});
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        });
+        
+        // Append to li
+        $(this).append(copyBtn);
+    });
+});
