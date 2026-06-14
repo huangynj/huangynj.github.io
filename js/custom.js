@@ -193,3 +193,132 @@ $(window).on('scroll', function() {
     // Update the width of the progress bar
     $('#scroll-progress').css('width', scrolled + '%');
 });
+
+// ==========================================================================
+// PUBLICATION METRICS CHART
+// ==========================================================================
+$(document).ready(function() {
+    if ($('#metricsChart').length === 0) return;
+
+    // 1. Parse DOM for Publication Counts
+    let pubCounts = {};
+    let currentYear = null;
+
+    $('#publications .academic-list').children().each(function() {
+        if ($(this).is('p') && $(this).find('.label-success').length > 0) {
+            let labelText = $(this).find('.label-success').text().trim();
+            if (labelText !== "Under Review" && !isNaN(parseInt(labelText))) {
+                currentYear = labelText;
+                pubCounts[currentYear] = 0;
+            } else {
+                currentYear = null;
+            }
+        } else if ($(this).is('li') && currentYear) {
+            pubCounts[currentYear]++;
+        }
+    });
+
+    // 2. Fetch Google Scholar Citations (Dynamically via GitHub Actions)
+    fetch('citations.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(citations => {
+            renderChart(pubCounts, citations);
+        })
+        .catch(error => {
+            console.error('Error fetching citations:', error);
+            // Fallback to empty if fetch fails
+            renderChart(pubCounts, {});
+        });
+
+    function renderChart(pubCounts, citations) {
+        // Prepare arrays for Chart.js (sort years ascending)
+        let labels = Object.keys(pubCounts).sort();
+        let pubData = labels.map(year => pubCounts[year] || 0);
+        let citData = labels.map(year => citations[year] || 0);
+
+        // 3. Render Chart
+        const ctx = document.getElementById('metricsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Publications per Year',
+                        data: pubData,
+                        backgroundColor: 'rgba(24, 188, 156, 0.7)', // Theme green (#18bc9c)
+                        borderColor: 'rgba(24, 188, 156, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y',
+                        order: 2
+                    },
+                    {
+                        label: 'Citations (Google Scholar)',
+                        data: citData,
+                        type: 'line',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                        yAxisID: 'y1',
+                        tension: 0.3,
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: { display: false }
+                    },
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Publications',
+                            color: '#18bc9c'
+                        },
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Citations',
+                            color: 'rgba(255, 99, 132, 1)'
+                        },
+                        beginAtZero: true,
+                        grid: {
+                            drawOnChartArea: false, // only want the grid lines for one axis to show up
+                        },
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+});

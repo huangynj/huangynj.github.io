@@ -91,11 +91,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/menucollapse.js"></script>
     <script type="text/javascript" src="js/arrow78.js?v=2"></script>
-    <script type="text/javascript" src="js/custom.js?v=8"></script>
+    <script type="text/javascript" src="js/custom.js?v=11"></script>
 
     <!-- MathJax -->
     <script type="text/javascript"
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+    <!-- Chart.js for Publication Metrics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- flashing text style -->
     <style>
@@ -1356,6 +1359,11 @@
                         </span>
 
                     </h4>
+
+                    <!-- Publication & Citation Metrics Chart -->
+                    <div style="width: 100%; max-width: 800px; margin: 30px auto;">
+                        <canvas id="metricsChart" height="100"></canvas>
+                    </div>
 
                     <!-- Year Button -->
                     <h5 class="year-buttons sticky-year-nav">
