@@ -1,2 +1,6 @@
 .DS_Store
 images/.DS_Store
+
+# Python
+venv/
+__pycache__/
