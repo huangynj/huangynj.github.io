@@ -102,7 +102,7 @@ button:focus-visible {
    ========================================================================== */
 
 .hero-section {
-	padding: 40px 0;
+	padding: 84px 0 40px;
 	background: var(--hero-gradient);
 	border-radius: 0 0 50px 50px;
 	margin-bottom: 2rem;
@@ -492,7 +492,7 @@ ol li ol li {
 	}
 
 	.hero-section {
-		padding: 24px 0 18px;
+		padding: 74px 0 18px;
 		border-radius: 0 0 24px 24px;
 		margin-bottom: 1rem;
 	}
