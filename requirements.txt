@@ -1,1 +1,1 @@
-scholarly
+scholarly[tor]

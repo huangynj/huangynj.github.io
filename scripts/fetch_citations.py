@@ -1,6 +1,6 @@
 import json
 import os
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 
 # Set the author ID (Yongjie Huang's Google Scholar ID)
 AUTHOR_ID = "OUrJeeMAAAAJ"
@@ -8,6 +8,16 @@ AUTHOR_ID = "OUrJeeMAAAAJ"
 def fetch_scholar_data():
     try:
         print(f"Fetching Google Scholar data for Author ID: {AUTHOR_ID}")
+        
+        # Setup Tor Proxy to avoid blocking on GitHub Actions
+        pg = ProxyGenerator()
+        try:
+            pg.Tor_Internal(tor_cmd="tor")
+            scholarly.use_proxy(pg)
+            print("Successfully configured Tor proxy.")
+        except Exception as e:
+            print(f"Tor not found or failed to start, falling back to direct connection... ({e})")
+        
         # Search for the author and fetch detailed profile
         search_query = scholarly.search_author_id(AUTHOR_ID)
         author = scholarly.fill(search_query, sections=['counts', 'indices'])

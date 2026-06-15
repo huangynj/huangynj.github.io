@@ -23,7 +23,10 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tor
+          pip install -r requirements.txt
 
       - name: Fetch citations
         run: python scripts/fetch_citations.py
