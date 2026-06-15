@@ -5,13 +5,30 @@ from scholarly import scholarly
 # Set the author ID (Yongjie Huang's Google Scholar ID)
 AUTHOR_ID = "OUrJeeMAAAAJ"
 
+def skip_update(reason):
+    print(f"Warning: {reason}. Keeping existing citations.json.")
+    return True
+
 def fetch_scholar_data():
     try:
         print(f"Fetching Google Scholar data for Author ID: {AUTHOR_ID}")
         
         # Search for the author and fetch detailed profile
         search_query = scholarly.search_author_id(AUTHOR_ID)
-        author = scholarly.fill(search_query, sections=['counts', 'indices'])
+        if search_query is None:
+            return skip_update("Google Scholar returned no author profile")
+
+        try:
+            author = scholarly.fill(search_query, sections=['counts', 'indices'])
+        except AttributeError as e:
+            if "'NoneType' object has no attribute 'get'" in str(e):
+                return skip_update("Google Scholar returned an empty author profile")
+            raise
+
+        if author is None:
+            return skip_update("Google Scholar returned no citation profile")
+        if not isinstance(author, dict):
+            return skip_update(f"Google Scholar returned an unexpected profile payload ({type(author).__name__})")
         
         # Extract citations per year
         cites_per_year = author.get('cites_per_year', {})
@@ -20,8 +37,7 @@ def fetch_scholar_data():
         i10_index = author.get('i10index', 0)
         
         if not cites_per_year:
-            print("Warning: No citation data found. Scholar might be blocking the request.")
-            return False
+            return skip_update("No citation data found; Scholar might be blocking the request")
 
         # Sort and write to citations.json
         output_file = 'citations.json'
