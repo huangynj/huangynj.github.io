@@ -10,7 +10,7 @@ def fetch_scholar_data():
         print(f"Fetching Google Scholar data for Author ID: {AUTHOR_ID}")
         # Search for the author and fetch detailed profile
         search_query = scholarly.search_author_id(AUTHOR_ID)
-        author = scholarly.fill(search_query, sections=['counts'])
+        author = scholarly.fill(search_query, sections=['counts', 'indices'])
         
         # Extract citations per year
         cites_per_year = author.get('cites_per_year', {})
