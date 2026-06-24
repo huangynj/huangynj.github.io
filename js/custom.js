@@ -456,6 +456,33 @@ $(document).ready(function() {
             window.chartData = { pubCounts, citations: {} };
             renderMetricsChart(); // Render if container is already visible
         });
+
+    // 3. Fetch ORCID Peer Reviews
+    fetch('orcid_peer_reviews.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let reviewCounts = {};
+            let totalReviews = data.length;
+            data.forEach(review => {
+                if (review['completion-date'] && review['completion-date'].year && review['completion-date'].year.value) {
+                    let year = review['completion-date'].year.value;
+                    reviewCounts[year] = (reviewCounts[year] || 0) + 1;
+                }
+            });
+            window.reviewChartData = { reviewCounts };
+            $('#metric-total-reviews').text(totalReviews);
+            renderReviewMetricsChart();
+        })
+        .catch(error => {
+            console.error('Error fetching peer reviews:', error);
+            window.reviewChartData = { reviewCounts: {} };
+            renderReviewMetricsChart();
+        });
 });
 
 window.toggleMetricsChart = function() {
@@ -471,3 +498,96 @@ window.toggleMetricsChart = function() {
         container.slideUp(300);
     }
 };
+
+// ==========================================================================
+// PEER REVIEW METRICS CHART
+// ==========================================================================
+let reviewMetricsChartInstance = null;
+
+function renderReviewMetricsChart() {
+    if (reviewMetricsChartInstance || !window.reviewChartData || !$('#reviewMetricsChartContainer').is(':visible')) {
+        return;
+    }
+
+    let reviewCounts = window.reviewChartData.reviewCounts;
+    let labels = Object.keys(reviewCounts).sort();
+    let data = labels.map(year => reviewCounts[year] || 0);
+
+    const ctx = document.getElementById('reviewMetricsChart').getContext('2d');
+    reviewMetricsChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Verified Peer Reviews per Year (ORCID)',
+                    data: data,
+                    backgroundColor: 'rgba(24, 188, 156, 0.7)',
+                    borderColor: 'rgba(24, 188, 156, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 500
+            },
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: { display: false }
+                },
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'Number of Reviews',
+                        color: 'rgba(24, 188, 156, 1)'
+                    },
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 20,
+                        generateLabels: function(chart) {
+                            const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                            original.forEach(label => {
+                                label.pointStyle = 'rect';
+                            });
+                            return original;
+                        }
+                    }
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+window.toggleReviewMetricsChart = function() {
+    let container = $('#reviewMetricsChartContainer');
+    if (container.is(':hidden')) {
+        container.show();
+        renderReviewMetricsChart();
+        container.hide();
+        container.slideDown(300);
+    } else {
+        container.slideUp(300);
+    }
+};
+
