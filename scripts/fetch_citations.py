@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.request
 from scholarly import scholarly
 
 # Set the author ID (Yongjie Huang's Google Scholar ID)
@@ -70,8 +71,50 @@ def fetch_scholar_data():
         print(f"Error fetching Google Scholar data: {e}")
         return False
 
+def fetch_orcid_peer_reviews():
+    try:
+        print("Fetching ORCID peer review data...")
+        url = "https://pub.orcid.org/v3.0/0000-0001-7883-8768/peer-reviews"
+        request = urllib.request.Request(
+            url,
+            headers={"Accept": "application/json"},
+        )
+        with urllib.request.urlopen(request) as response:
+            data = json.load(response)
+
+        reviews = [
+            review
+            for group in data.get("group", [])
+            for peer_group in group.get("peer-review-group", [])
+            for review in peer_group.get("peer-review-summary", [])
+        ]
+
+        output_file = "orcid_peer_reviews.json"
+        existing_data = []
+        if os.path.exists(output_file):
+            with open(output_file, 'r') as f:
+                try:
+                    existing_data = json.load(f)
+                except json.JSONDecodeError:
+                    pass
+
+        if existing_data == reviews:
+            print(f"No changes in ORCID peer review data (total {len(reviews)}).")
+            return True
+
+        with open(output_file, "w") as f:
+            json.dump(reviews, f, indent=2)
+
+        print(f"Successfully saved {len(reviews)} ORCID peer reviews to {output_file}.")
+        return True
+    except Exception as e:
+        print(f"Error fetching ORCID peer review data: {e}")
+        return False
+
 if __name__ == "__main__":
-    success = fetch_scholar_data()
-    if not success:
+    scholar_success = fetch_scholar_data()
+    orcid_success = fetch_orcid_peer_reviews()
+    if not scholar_success or not orcid_success:
         # Exit with error code so GitHub Action fails and alerts if it breaks
         exit(1)
+
