@@ -1,2 +1,3 @@
 scholarly[tor]
+bibtexparser<2  # scholarly imports bibtexparser.bibdatabase, removed in 2.x
 httpx[socks]
