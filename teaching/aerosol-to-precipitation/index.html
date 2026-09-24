@@ -100,6 +100,7 @@
     font-variant-numeric: tabular-nums;
   }
   .chapters .phase { color: var(--muted); font-size: 13px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 24px; }
   .versions { display: flex; gap: 6px; }
   .versions button {
     padding: 6px 14px;
@@ -125,16 +126,22 @@
     <p class="sub">Microphysical pathways in warm and mixed-phase clouds, and how models represent them.</p>
   </header>
 
-  <div class="versions" role="group" aria-label="Video background">
-    <button type="button" id="v-dark" data-src="aerosol_to_precip_narrated_720p.mp4" data-poster="poster.jpg" aria-pressed="true">Dark background</button>
-    <button type="button" id="v-light" data-src="aerosol_to_precip_light_narrated_720p.mp4" data-poster="poster_light.jpg" aria-pressed="false">Light background</button>
+  <div class="controls">
+    <div class="versions" role="group" aria-label="Version">
+      <button type="button" id="v-standard" data-key="style" data-val="" aria-pressed="true">Standard</button>
+      <button type="button" id="v-fun" data-key="style" data-val="_fun" aria-pressed="false">Fun (cartoon host)</button>
+    </div>
+    <div class="versions" role="group" aria-label="Video background">
+      <button type="button" id="v-dark" data-key="bg" data-val="" aria-pressed="true">Dark background</button>
+      <button type="button" id="v-light" data-key="bg" data-val="_light" aria-pressed="false">Light background</button>
+    </div>
   </div>
 
   <video id="video" controls playsinline preload="metadata" poster="poster.jpg"
          src="aerosol_to_precip_narrated_720p.mp4"></video>
 
   <div class="meta">
-    <span>5:26</span><span>720p</span><span>narrated · captions burned in</span>
+    <span>5:26</span><span>720p</span><span>narrated · captions burned in</span><span>fun version: same science, plus jokes</span>
   </div>
 
   <h2>Chapters</h2>
@@ -179,24 +186,35 @@
     list.appendChild(li);
     return b;
   });
+  // All four videos share the same timeline, so switching keeps the playback position.
   const versions = [...document.querySelectorAll(".versions button")];
-  function pick(btn, keepTime) {
+  const state = { style: "", bg: "" };
+  function apply(keepTime) {
     const t = video.currentTime, playing = !video.paused;
-    versions.forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
-    video.poster = btn.dataset.poster;
-    video.src = btn.dataset.src;
+    versions.forEach(b => b.setAttribute("aria-pressed", state[b.dataset.key] === b.dataset.val ? "true" : "false"));
+    const v = state.bg + state.style;  // "", "_fun", "_light", "_light_fun"
+    video.poster = `poster${v}.jpg`;
+    video.src = `aerosol_to_precip${v}_narrated_720p.mp4`;
     if (keepTime) {
       video.addEventListener("loadedmetadata", () => {
         video.currentTime = t;
         if (playing) video.play().catch(() => {});
       }, { once: true });
     }
-    try { localStorage.setItem("a2p-version", btn.id); } catch (e) {}
+    try { localStorage.setItem("a2p-state", JSON.stringify(state)); } catch (e) {}
   }
-  versions.forEach(b => b.addEventListener("click", () => pick(b, true)));
+  versions.forEach(b => b.addEventListener("click", () => {
+    if (state[b.dataset.key] === b.dataset.val) return;
+    state[b.dataset.key] = b.dataset.val;
+    apply(true);
+  }));
   try {
-    const saved = document.getElementById(localStorage.getItem("a2p-version") || "");
-    if (saved && saved.id !== "v-dark") pick(saved, false);
+    const saved = JSON.parse(localStorage.getItem("a2p-state") || "null");
+    if (saved && (saved.style || saved.bg)) {
+      state.style = saved.style === "_fun" ? "_fun" : "";
+      state.bg = saved.bg === "_light" ? "_light" : "";
+      apply(false);
+    }
   } catch (e) {}
   video.addEventListener("timeupdate", () => {
     let cur = 0;
