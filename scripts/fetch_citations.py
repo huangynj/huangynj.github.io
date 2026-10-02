@@ -14,12 +14,13 @@ def fetch_scholar_data():
     try:
         print(f"Fetching Google Scholar data for Author ID: {AUTHOR_ID}")
         
-        # Search for the author and fetch detailed profile
-        search_query = scholarly.search_author_id(AUTHOR_ID)
-        if search_query is None:
-            return skip_update("Google Scholar returned no author profile")
-
+        # Search for the author and fetch detailed profile.
+        # Both calls fetch the profile page; scholarly raises this AttributeError
+        # when Scholar serves a non-profile page (e.g. blocking the Tor exit).
         try:
+            search_query = scholarly.search_author_id(AUTHOR_ID)
+            if search_query is None:
+                return skip_update("Google Scholar returned no author profile")
             author = scholarly.fill(search_query, sections=['counts', 'indices'])
         except AttributeError as e:
             if "'NoneType' object has no attribute 'get'" in str(e):
